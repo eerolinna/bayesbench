@@ -1,4 +1,4 @@
-cat arguments.txt | parallel python run.py --args {} --output_dir ./output/
+cat arguments.json | parallel python run.py --args {} --output_dir ./output/
 
 # same idea works for triton with `slurm` instead of `parallel`
 
@@ -6,5 +6,5 @@ cat arguments.txt | parallel python run.py --args {} --output_dir ./output/
 
 
 # Alternative form
-cat arguments.txt | parallel python -m bayesbench.run --args {} --output_dir ./output/
+cat arguments.json | parallel python -m bayesbench.run --args {} --output_dir ./output/
 
