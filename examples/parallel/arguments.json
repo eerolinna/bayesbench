@@ -1,6 +1,6 @@
-{"model_code": "...", "method_name": "...", "dataset_name": "...", "diagnostics": ["...", "..."]}
-{"model_code": "...", "method_name": "...", "dataset_name": "...", "diagnostics": ["...", "..."]}
-{"model_code": "...", "method_name": "...", "dataset_name": "...", "diagnostics": ["...", "..."]}
-{"model_code": "...", "method_name": "...", "dataset_name": "...", "diagnostics": ["...", "..."]}
-{"model_code": "...", "method_name": "...", "dataset_name": "...", "diagnostics": ["...", "..."]}
-{"model_code": "...", "method_name": "...", "dataset_name": "...", "diagnostics": ["...", "..."]}
+{"posterior_db": "...", "model_code_location": "...", "method_name": "bayesbench_stan.stan_nuts", "dataset_name": "...", "diagnostics": ["...", "..."], "extra_fitting_args": {"adapt_delta": "0.95"}}
+{"posterior_db": "...", "model_code_location": "...", "method_name": "bayesbench_stan.stan_fullrank_vi", "dataset_name": "...", "diagnostics": ["...", "..."], "extra_fitting_args": {"tolerance": "0.001"}}
+{"posterior_db": "...", "model_code_location": "...", "method_name": "../stan_api_inference_engine.py", "dataset_name": "...", "diagnostics": ["...", "..."], "extra_fitting_args": {"..": ".."}}
+{"posterior_db": "...", "model_code_location": "...", "method_name": "...", "dataset_name": "...", "diagnostics": ["...", "..."], "extra_fitting_args": {"..": ".."}}
+{"posterior_db": "...", "model_code_location": "...", "method_name": "...", "dataset_name": "...", "diagnostics": ["...", "..."], "extra_fitting_args": {"..": ".."}}
+{"posterior_db": "...", "model_code_location": "...", "method_name": "...", "dataset_name": "...", "diagnostics": ["...", "..."], "extra_fitting_args": {"..": ".."}}
