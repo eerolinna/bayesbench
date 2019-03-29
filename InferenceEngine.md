@@ -1,6 +1,6 @@
 # Inference engine
 
-This document describes the input and outoput boundaries for python inference engines. R inference engines will probably be similar but they don't have to be exactly the same
+This document describes the input and output boundaries for python inference engines. R inference engines will probably be similar but they don't have to be exactly the same
 
 ## Description
 
