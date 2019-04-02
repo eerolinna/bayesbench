@@ -1,13 +1,19 @@
 from dataclasses import dataclass, asdict
-from typing import Any, List, Mapping, Tuple, Optional
+from typing import Any, Sequence, Mapping, Tuple, Optional
 
-Samples = Mapping[str, List[float]]
+Samples = Mapping[str, Sequence[float]]
+
+# Maybe better to change output format into a zipfile that contains 1 file for metadata and 1 file for samples.
+# Then we can quickly load the metadata file without having to load the sample file
+# NOTE this assumes that I remember correctly that zipfiles can be unzipped in a streaming fashion where we can only unzip the metadata without having to zip the sample file. Need to check
 
 
 @dataclass
 class Output:
+    # TODO: Right now `samples` includes not just posterior but also prior predictive and posterior predictive samples too.
+    # This is the Stan approach. However PyMC and Pyro have a bit different approach that might be better.
     samples: Samples
-    diagnostics: List[
+    diagnostics: Sequence[
         Tuple[str, Any]
     ]  # list of diagnostic names and outputs, output type depends on name
 
@@ -21,11 +27,9 @@ class Output:
     model_name: str
     method_name: str
     lang: str
-    framework: str
+    inference_engine: str
     dataset_name: str
-    extra_fitting_args: Mapping[
-        str, Mapping[str, Any]
-    ]  # method and model name as keys. Value type depends on method
+    extra_fitting_args: Mapping[str, Any]
 
     def to_dict(self):
         d = asdict(self)
