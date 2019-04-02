@@ -7,6 +7,7 @@ name = "pypi"
 pystan = "<3.0.0"
 numpy = "*"
 pymc3 = "*"
+pyaml = "*"
 
 [dev-packages]
 pylint = "*"
