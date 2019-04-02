@@ -9,24 +9,79 @@
 
 # Advanced stuff: can we validate that the diagnostics actually work for the intermediate output that the inference method produces? We could sort of do this with some test cases probably
 
+from typing import Mapping, Any, Tuple, Callable
+import pystan
+from . import stan_utility
+from bayes_benchmark.output import Samples
 
-def stan_nuts(model, data, diagnostics, seed, extra_fitting_args):
+
+def nuts(
+    *,
+    model_name: str,
+    data: Mapping[str, Any],
+    diagnostics: Any,
+    get_model_path: Callable,
+    seed: int,
+    extra_fitting_args: Mapping[str, Any],
+) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
+
+    stan_model = get_compiled_model(model_name, get_model_path)
+
+    # load extra args for model X and method Y
+    stan_fit = stan_model.sampling(data=data, **extra_fitting_args)
+
+    samples = stan_fit.extract()
+
+    diagnostic_values: Mapping[str, Any] = {}  # TODO
+
+    explicit_args = extra_fitting_args  # TODO
+
+    # maybe add included diagnostics here
+    # So essentially every inference engine can provide built-in diagnostics and then there can be extra diagnostics also
+    # More diagnostics is unlikely to be worse than less diagnostics
+
+    return samples, diagnostic_values, explicit_args
+
+
+def fullrank_vi(model, data, diagnostics, seed, extra_fitting_args):
     pass
-
-
-def stan_fullrank_vi(model, data, diagnostics, seed, extra_fitting_args):
-    pass
-
-
-# Meanfield also
-# Should meanfield/fullrank just be extra fitting args? I guess they should be considered as separate methods
-
-
-def alternative(method, model, data, diagnostics, seed, extra_fitting_args):
-    if method == "stan_nuts":
-        return stan_nuts(model, data, diagnostics, seed, extra_fitting_args)
-    elif method == "stan_fullrank_vi":
-        pass
 
 
 # Stan 2 and 3 can have different packages, or at least different versions
+
+# This will be deleted, unnecessary soon
+def stan_method(*, stan_model, method_name):
+    "method names should not contain dashes (-)"
+    stan_methods: Mapping[str, Any] = {
+        "stan_nuts": stan_model.sampling,
+        "stan_vb_fullrank": functools.partial(stan_model.vb, algorithm="fullrank"),
+        "stan_vb_meanfield": functools.partial(stan_model.vb, algorithm="meanfield"),
+    }
+    return stan_methods[method_name]
+
+
+def get_compiled_model(model_name: str, get_model_path: Callable):
+
+    framework = "stan"
+    file_extension = ".stan"
+    model_code_path = get_model_path(
+        framework=framework, file_extension=file_extension, model_name=model_name
+    )
+
+    stan_model = stan_utility.compile_model(model_code_path)
+    return stan_model
+
+
+# There should be a function that can be used to create inference engine with custom inference methods
+def create_custom_inference_method(func, dataset, other_args):
+    pass
+    # Get model code path
+    # Compile model
+
+    # Run 1 iteration so we get a fitresult that exposes the gradients etc
+    # NOTE this requires dataset, so actually this needs to return a function that takes a dataset and other arguments and then applies them to `func`
+
+    # call func and return result
+
+    # So essentially this does some of the boring plumming
+    # Pystan3 I think won't need the 1 iteration
