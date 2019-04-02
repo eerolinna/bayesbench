@@ -1,0 +1,2916 @@
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2_hoprior
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_hiearchical_intercept2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_partial_pooling2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.meanfield_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.1
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.01
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 100
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 1000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
+- dataset_name: radon_mn
+  diagnostics:
+  - psis_khat
+  extra_fitting_arguments:
+    n_iterations: 10000
+    tolerance: 0.001
+  inference_engine: bayesbench_stan.laplace
+  model_name: radon_variable_intercept_slope2
+  posterior_db_location: db_loc
