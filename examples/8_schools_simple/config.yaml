@@ -1,0 +1,8 @@
+- dataset_name: 8_schools
+  inference_engine: bayesbench_stan.nuts
+  model_name: 8_schools_noncentered
+  posterior_db_location: /home/eero/default_posterior_db
+- dataset_name: 8_schools
+  inference_engine: bayesbench_stan.fullrank_vi
+  model_name: 8_schools_noncentered
+  posterior_db_location: /home/eero/default_posterior_db
