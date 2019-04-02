@@ -14,3 +14,6 @@ Write example code for all use cases
 
 PyMC3 SBC
 https://github.com/ColCarroll/simulation_based_calibration
+
+
+Diagnostics need to be added 
