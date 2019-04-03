@@ -9,10 +9,11 @@
 
 # Advanced stuff: can we validate that the diagnostics actually work for the intermediate output that the inference method produces? We could sort of do this with some test cases probably
 
-from typing import Mapping, Any, Tuple, Callable
+from typing import Mapping, Any, Tuple, Callable, Optional
 import pystan
 from . import stan_utility
-from bayes_benchmark.output import Samples
+from bayesbench.output import Samples
+import pandas as pd
 
 
 def nuts(
@@ -21,7 +22,7 @@ def nuts(
     data: Mapping[str, Any],
     diagnostics: Any,
     get_model_path: Callable,
-    seed: int,
+    seed: Optional[int],
     extra_fitting_args: Mapping[str, Any],
 ) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
 
@@ -43,8 +44,72 @@ def nuts(
     return samples, diagnostic_values, explicit_args
 
 
-def fullrank_vi(model, data, diagnostics, seed, extra_fitting_args):
-    pass
+def fullrank_advi(
+    *,
+    model_name: str,
+    data: Mapping[str, Any],
+    diagnostics: Any,
+    get_model_path: Callable,
+    seed: Optional[int],
+    extra_fitting_args: Mapping[str, Any],
+) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
+
+    return base_advi(
+        model_name=model_name,
+        data=data,
+        diagnostics=diagnostics,
+        get_model_path=get_model_path,
+        seed=seed,
+        extra_fitting_args=extra_fitting_args,
+        algorithm="fullrank",
+    )
+
+
+def meanfield_advi(
+    *,
+    model_name: str,
+    data: Mapping[str, Any],
+    diagnostics: Any,
+    get_model_path: Callable,
+    seed: Optional[int],
+    extra_fitting_args: Mapping[str, Any],
+) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
+    return base_advi(
+        model_name=model_name,
+        data=data,
+        diagnostics=diagnostics,
+        get_model_path=get_model_path,
+        seed=seed,
+        extra_fitting_args=extra_fitting_args,
+        algorithm="meanfield",
+    )
+
+
+def base_advi(
+    *,
+    model_name: str,
+    data: Mapping[str, Any],
+    diagnostics: Any,
+    get_model_path: Callable,
+    seed: Optional[int],
+    extra_fitting_args: Mapping[str, Any],
+    algorithm: str,
+) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
+
+    stan_model = get_compiled_model(model_name, get_model_path)
+
+    result = stan_model.vb(data=data, algorithm=algorithm, **extra_fitting_args)
+
+    sample_file = result["args"]["sample_file"].decode("utf-8")
+    df = pd.read_csv(sample_file, comment="#")
+
+    samples = df.to_dict(orient="list")
+
+    diagnostic_values: Mapping[str, Any] = {}  # TODO
+
+    explicit_args = extra_fitting_args  # TODO
+
+    return samples, diagnostic_values, explicit_args
 
 
 # Stan 2 and 3 can have different packages, or at least different versions
