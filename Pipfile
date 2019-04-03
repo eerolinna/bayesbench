@@ -8,6 +8,9 @@ pystan = "<3.0.0"
 numpy = "*"
 pymc3 = "*"
 pyaml = "*"
+torch = "*"
+pyro-ppl = "*"
+pandas = "*"
 
 [dev-packages]
 pylint = "*"
@@ -15,6 +18,9 @@ mypy = "*"
 black = "*"
 ipdb = "*"
 ipython = "*"
+arviz = "*"
+jupyter = "*"
+
 
 [requires]
 python_version = "3.7"
