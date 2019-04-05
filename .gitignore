@@ -5,3 +5,4 @@
 *.json
 .ipynb_checkpoints
 *.ipynb
+*.egg-info
