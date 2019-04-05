@@ -11,6 +11,7 @@ pyaml = "*"
 torch = "*"
 pyro-ppl = "*"
 pandas = "*"
+bayesbench = {path = "./bayesbench", editable = true}
 
 [dev-packages]
 pylint = "*"
