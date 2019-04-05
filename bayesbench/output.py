@@ -5,7 +5,14 @@ Samples = Mapping[str, Sequence[float]]
 
 # Maybe better to change output format into a zipfile that contains 1 file for metadata and 1 file for samples.
 # Then we can quickly load the metadata file without having to load the sample file
-# NOTE this assumes that I remember correctly that zipfiles can be unzipped in a streaming fashion where we can only unzip the metadata without having to zip the sample file. Need to check
+
+
+@dataclass
+class RunConfig:
+    posterior_name: str
+    inference_engine: str
+    method_name: str
+    method_specific_arguments: Mapping[str, Any]
 
 
 @dataclass
@@ -24,23 +31,21 @@ class Output:
     # Seed is also optional
     seed: Optional[int]
 
-    model_name: str
-    method_name: str
+    run_config: RunConfig
+
     lang: str
-    inference_engine: str
-    dataset_name: str
-    extra_fitting_args: Mapping[str, Any]
 
     def to_dict(self):
+        # maybe not needed?
+        # self.run_details = asdict(self.run_details)
         d = asdict(self)
         return d
 
     @classmethod
     def from_dict(cls, dct):
+        dct["run_config"] = RunConfig.from_dict(dct["run_config"])
         return cls(**dct)
 
 
 # Diagnostic output needs to be JSON serializable
 # Extra_fitting_args also need to be JSON serializable
-
-# seed
