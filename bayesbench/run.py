@@ -33,9 +33,8 @@ def run(
     *,
     posterior_db_location: str,
     inference_engine: str,
-    model_name: str,
-    dataset_name: str,
-    extra_fitting_args: Mapping[str, Any],
+    posterior_name: str,
+    method_specific_arguments: Mapping[str, Any],
     diagnostics: Sequence[str],
     output_dir: str,
     seed: int = None,
@@ -59,7 +58,8 @@ def run(
 
     posterior_db = PosteriorDatabase(posterior_db_location)
 
-    dataset_path = posterior_db.get_dataset_path(dataset_name)
+    dataset_path = posterior_db.get_dataset_path(posterior_name=posterior_name)
+    model_name = posterior_db.get_model_name(posterior_name)
 
     inference_engine_name, method_name = inference_engine.rsplit(".", 1)
 
@@ -78,7 +78,7 @@ def run(
         diagnostics=diagnostics,
         get_model_path=posterior_db.get_model_path,
         seed=seed,
-        extra_fitting_args=extra_fitting_args,
+        method_specific_arguments=method_specific_arguments,
     )
 
     end = time.time()
@@ -88,8 +88,7 @@ def run(
         inference_engine_name=inference_engine_name,
         creation_time=start,
         execution_time=end - start,
-        model_name=model_name,
-        dataset_path=dataset_path,
+        posterior_name=posterior_name,
         method_name=method_name,
     )
 
