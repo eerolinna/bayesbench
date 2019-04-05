@@ -100,6 +100,15 @@ def run(
         method_name=method_name,
         dataset_name=dataset_name,
     )
+    return output
+
+
+def run_many(runs):
+    results = []
+    for run_data in runs:
+        results.append(run(**run_data))
+
+    return results
 
 
 def result_to_output(
@@ -195,7 +204,7 @@ def main():
 def test_main():
     # load command line arguments here and pass to run
     model_name = "8_schools_noncentered"
-    inference_engine = "bayesbench_stan.nuts"
+    inference_engine = "bayesbench_stan.meanfield_advi"
     dataset_name = "8_schools"
     output_dir = "out"
     posterior_db_location = "/home/eero/default_posterior_db"
