@@ -94,14 +94,7 @@ def run(
         seed=seed,
     )
 
-    save_output(
-        output=output,
-        output_dir=output_dir,
-        inference_engine=inference_engine_name,
-        model_name=model_name,
-        method_name=method_name,
-        dataset_name=dataset_name,
-    )
+    save_output(output=output, output_dir=output_dir)
     return output
 
 
@@ -155,25 +148,18 @@ def get_hash(to_hash: str) -> str:
     return md5(to_hash.encode("ascii")).hexdigest()
 
 
-def save_output(
-    *,
-    output: Output,
-    output_dir: str,
-    inference_engine: str,
-    model_name: str,
-    method_name: str,
-    dataset_name: str,
-) -> None:
-    # filename can be inference engine name - method name - dataset name - model name
-    inference_engine_hash = get_hash(inference_engine)
+def save_output(*, output: Output, output_dir: str) -> None:
 
-    model_hash = get_hash(model_name)
+    # This hashing is from https://stackoverflow.com/questions/5884066/hashing-a-dictionary
+    # NOTE: This might not be stable across machines and python versions.
+    # That is not a huge problem, but we can later look into if there is a better way to generate unique file names
+    config_hash = get_hash(
+        json.dumps(
+            output.run_config, sort_keys=True, ensure_ascii=True, separator=(",", ":")
+        )
+    )
 
-    dataset_hash = get_hash(dataset_name)
-
-    method_hash = get_hash(method_name)
-
-    filename = f"{inference_engine_hash}-{method_hash}-{model_hash}-{dataset_hash}.json"
+    filename = f"{config_hash}.json"
 
     full_filename = os.path.join(output_dir, filename)
 
