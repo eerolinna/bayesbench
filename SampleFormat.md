@@ -40,12 +40,12 @@ generated quantities {
 
 ```json
 {
-    "mu": [...],
-    "tau": [...],
-    "theta_tilde": [...],
-    "theta": [...],
-    "y_hat": [...],
-    "log_lik": [...],
+    "mu": ["..."],
+    "tau": ["..."],
+    "theta_tilde": ["..."],
+    "theta": ["..."],
+    "y_hat": ["..."],
+    "log_lik": ["..."],
 }
 ```
 
@@ -53,17 +53,17 @@ generated quantities {
 ```json
 {
     "posterior": {
-        "mu": [...],
-        "tau": [...],
-        "theta_tilde": [...],
-        "theta": [...]
+        "mu": ["..."],
+        "tau": ["..."],
+        "theta_tilde": ["..."],
+        "theta": ["..."]
     },
     "prior": null,
     "prior_predictive": null,
     "posterior_predictive": {
-        "y": [...]
+        "y": ["..."]
     },
-    "log_likelihood": [...]
+    "log_likelihood": ["..."]
 }
 ```
 
@@ -102,9 +102,9 @@ generated quantities {
 
 ```json
 {
-    "pi": [...],
-    "y_": [...],
-    "pi_": [...],
+    "pi": ["..."],
+    "y_": ["..."],
+    "pi_": ["..."],
 }
 ```
 
@@ -114,13 +114,13 @@ generated quantities {
 ```json
 {
     "posterior": {
-        "pi": [...]
+        "pi": ["..."]
     },
     "prior": {
-        "pi": [...],
+        "pi": ["..."],
     },
     "prior_predictive": {
-        "y": [...]
+        "y": ["..."]
     },
     "posterior_predictive": null,
     "log_lik": null
