@@ -17,8 +17,8 @@
 # - Should be pretty straightforward to adapt from stan code
 
 import json
-from typing import Dict, Any, Mapping, Sequence
-from .output import Output
+from typing import Dict, Any, Mapping, Sequence, Optional
+from .output import Output, RunConfig
 from .posterior_db import PosteriorDatabase
 import functools
 import numpy
@@ -90,6 +90,8 @@ def run(
         execution_time=end - start,
         posterior_name=posterior_name,
         method_name=method_name,
+        method_specific_arguments=explicit_args,
+        seed=seed,
     )
 
     save_output(
@@ -119,19 +121,25 @@ def result_to_output(
     execution_time,
     posterior_name,
     method_name,
-    inference_engine_name,
+    inference_engine_name: str,
+    method_specific_arguments,
+    seed: Optional[int],
 ):
+    run_config = RunConfig(
+        seed=seed,
+        lang="python",
+        posterior_name=posterior_name,
+        inference_engine=inference_engine_name,
+        method_name=method_name,
+        method_specific_arguments=method_specific_arguments,
+    )
+
     output = Output(
         samples=samples,
         diagnostics=diagnostics,
         creation_time=creation_time,
         execution_time=execution_time,
-        lang="python",
-        inference_engine=inference_engine_name,
-        posterior_name=posterior_name,
-        extra_fitting_args={},
-        method_name=method_name,
-        seed=None,
+        run_config=run_config,
     )
     return output
 

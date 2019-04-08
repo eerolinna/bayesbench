@@ -13,6 +13,8 @@ class RunConfig:
     inference_engine: str
     method_name: str
     method_specific_arguments: Mapping[str, Any]
+    seed: Optional[int]
+    lang: str
 
 
 @dataclass
@@ -29,11 +31,8 @@ class Output:
     execution_time: Optional[float]
 
     # Seed is also optional
-    seed: Optional[int]
 
     run_config: RunConfig
-
-    lang: str
 
     def to_dict(self):
         # maybe not needed?
