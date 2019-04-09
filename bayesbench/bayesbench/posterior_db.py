@@ -3,6 +3,7 @@ import yaml
 import glob
 from .output import Output
 import json
+from typing import Optional
 
 
 class PosteriorDatabase:
@@ -10,13 +11,17 @@ class PosteriorDatabase:
         self.location = location
         self.posteriors = get_posteriors(location)
 
-    def get_model_path(self, *, model_name, framework, file_extension):
+    def get_model_path(self, *, model_name, framework, file_extension) -> Optional[str]:
         model_dir = join(self.location, "models")
         paths = glob.glob(
             model_dir + f"/**/{model_name}{file_extension}", recursive=True
         )
-        assert len(paths) == 1, f"There were multiple models named {model_name}"
-        return paths[0]
+        n_found = len(paths)
+        assert n_found <= 1, f"There were multiple models named {model_name}"
+        if n_found == 0:
+            return None
+        else:
+            return paths[0]
 
     def get_model_name(self, posterior_name):
         model_name = self.posteriors[posterior_name]["model_name"]
