@@ -215,6 +215,6 @@ model {
 }
 ```
 
-Both of these approaches feel deficient when I know that for example PyMC can generate prior and prior predictive samples using just the equivalent of the regular model, however out of these the separate generative and regular model approach feels cleaner.
+Both of these approaches (so one model or separate generative and regular models) feel deficient when I know that for example PyMC can generate prior and prior predictive samples using just the equivalent of the regular model, however out of these the separate generative and regular model approach feels cleaner.
 
 We might also want to have two separate outputs: one for prior and prior predictive outputs, one for posterior, posterior predictive and log_likelihood outputs.
