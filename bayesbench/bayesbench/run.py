@@ -38,6 +38,7 @@ def run(
     diagnostics: Sequence[str],
     output_dir: str,
     seed: int = None,
+    save=True,
 ) -> None:
 
     # load model from posterior DB
@@ -93,7 +94,7 @@ def run(
         method_specific_arguments=explicit_args,
         seed=seed,
     )
-
+    if save:
     save_output(output=output, output_dir=output_dir)
     return output
 
