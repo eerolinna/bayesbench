@@ -95,7 +95,7 @@ def run(
         seed=seed,
     )
     if save:
-    save_output(output=output, output_dir=output_dir)
+        save_output(output=output, output_dir=output_dir)
     return output
 
 
@@ -171,7 +171,7 @@ def save_output(*, output: Output, output_dir: str) -> None:
         json.dump(output.to_dict(), f, cls=NumpyEncoder)
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(description="Run inference")
     parser.add_argument("--json", required=True, help="Arguments as json string")
     parser.add_argument("--output-dir", required=True, help="Output directory")
@@ -180,21 +180,19 @@ def main():
 
     data = json.loads(args.json)
 
-    model_name = data["model_name"]
+    posterior_name = data["posterior_name"]
     inference_engine = data["inference_engine"]
-    dataset_name = data["dataset_name"]
     output_dir = args.output_dir
     posterior_db_location = data["posterior_db_location"]
-    extra_fitting_args = data.get("extra_fitting_args", {})
+    method_specific_arguments = data.get("method_specific_arguments", {})
     diagnostics = data.get("diagnostics", [])
 
     run(
-        model_name=model_name,
+        posterior_name=posterior_name,
         inference_engine=inference_engine,
-        dataset_name=dataset_name,
         output_dir=output_dir,
         posterior_db_location=posterior_db_location,
-        extra_fitting_args=extra_fitting_args,
+        method_specific_arguments=method_specific_arguments,
         diagnostics=diagnostics,
     )
 
