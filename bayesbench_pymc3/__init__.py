@@ -1,6 +1,8 @@
 import importlib
 import pymc3 as pm
 import json
+from typing import Mapping, Any, Optional, Callable, Tuple
+from bayesbench import Samples
 
 """
 
@@ -25,22 +27,58 @@ pymc_model_path
 """
 
 
-def run_pymc(
-    *, model_code_path: str, dataset_path: str, output_dir: str, method_name: str
-) -> None:
-    model_module = importlib.import_module(
-        model_code_path
-    )  # TODO might need to process path
-    model = model_module.model  # type: ignore
+def nuts(
+    *,
+    model_name: str,
+    data: Mapping[str, Any],
+    diagnostics: Any,
+    get_model_path: Callable,
+    seed: Optional[int],
+    method_specific_arguments: Mapping[str, Any],
+) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
 
-    with open(dataset_path) as json_f:
-        dataset = json.load(json_f)
+    model = get_model(model_name=model_name, data=data, get_model_path=get_model_path)
 
-    model_with_data = model(**dataset)
+    chains = 1  # TODO
+    draws = 1000  # TODO
+    with model:
+        trace = pm.sample(draws, chains)  # TODO use method_specific_arguments
+        prior = pm.sample_prior_predictive()
+        posterior_predictive = pm.sample_posterior_predictive(trace, 500, model)
 
-    result = pm.sample(model=model_with_data)
+    # Here I could probably use arviz for now. Might be good to check though how much work implementing this without arviz would be because we want that at some point anyway
 
-    # can also use pm.ADVI(model=model_with_data)
+    # Also need to check how prior and prior predictive differ from each other. I guess `prior` contains both in here.
+    raise Exception("Not finished yet")
+
+    # For VI can also use pm.ADVI(model=model_with_data)
     # or pm.FullRankADVI(model=model_with_data)
     # these need pm.fit() also
-    ...
+
+
+def generate_prior_predictive(model_name, data, get_model_path):
+    # This shouldn't really depend on data but not sure if it is possible to do without
+    # Or well it might depend on part of the data but not full data
+    model = get_model(model_name=model_name, data=data, get_model_path=get_model_path)
+
+    with model:
+        prior = pm.sample_prior_predictive()
+
+    raise Exception("Not finished yet")
+
+
+def get_model(*, model_name: str, data, get_model_path):
+    framework = "pymc3"
+    file_extension = ".py"
+
+    model_code_path = get_model_path(
+        framework=framework, file_extension=file_extension, model_name=model_name
+    )
+
+    model_module = importlib.import_module(model_code_path)
+
+    # we assume the model function is named model
+    model = model_module.model  # type: ignore
+
+    model_with_data = model(data)
+    return model_with_data
