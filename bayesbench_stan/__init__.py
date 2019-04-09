@@ -110,6 +110,16 @@ def base_advi(
     # TODO: Right now arrays get individual keys (arr[1], arr[2] etc)
     # Need to change that so MCMC and VI are compatible with each other
     new_samples = {k: np.array(v) for (k, v) in samples.items()}
+    # here I should convert samples to the slots formation
+    # Need to define the slots
+    # Then in order to convert I need information from from {model}-info.json
+    # We can use arviz to convert but then I have to map that back to whatever format we choose to use
+    # Later we should remove arviz because that lets us avoid a dependency, but for now arviz is a good thing to save time
+
+    # Hmm arviz might not work because it seems to expect MCMC result. Then I probably need to write the logic myself
+
+    model_info = get_model_info(model_name, get_model_path)
+
     diagnostic_values: Mapping[str, Any] = {}  # TODO
 
     explicit_args = method_specific_arguments  # TODO
@@ -140,6 +150,20 @@ def get_compiled_model(model_name: str, get_model_path: Callable):
 
     stan_model = stan_utility.compile_model(model_code_path)
     return stan_model
+
+
+def get_model_info(model_name: str, get_model_path: Callable) -> Mapping[str, Any]:
+    framework = "stan"
+    file_extension = ".json"
+    info_path = get_model_path(
+        framework=framework,
+        file_extension=file_extension,
+        model_name=f"{model_name}-info",
+    )
+    with open(info_path) as f:
+        info = json.load(f)
+
+    return info
 
 
 # There should be a function that can be used to create inference engine with custom inference methods
