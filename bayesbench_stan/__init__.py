@@ -14,6 +14,8 @@ import pystan
 from . import stan_utility
 from bayesbench.output import Samples
 import pandas as pd
+import numpy as np
+import json
 
 
 def nuts(
@@ -23,19 +25,19 @@ def nuts(
     diagnostics: Any,
     get_model_path: Callable,
     seed: Optional[int],
-    extra_fitting_args: Mapping[str, Any],
+    method_specific_arguments: Mapping[str, Any],
 ) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
 
     stan_model = get_compiled_model(model_name, get_model_path)
 
     # load extra args for model X and method Y
-    stan_fit = stan_model.sampling(data=data, **extra_fitting_args)
+    stan_fit = stan_model.sampling(data=data, **method_specific_arguments)
 
     samples = stan_fit.extract()
 
     diagnostic_values: Mapping[str, Any] = {}  # TODO
 
-    explicit_args = extra_fitting_args  # TODO
+    explicit_args = method_specific_arguments  # TODO
 
     # maybe add included diagnostics here
     # So essentially every inference engine can provide built-in diagnostics and then there can be extra diagnostics also
@@ -51,7 +53,7 @@ def fullrank_advi(
     diagnostics: Any,
     get_model_path: Callable,
     seed: Optional[int],
-    extra_fitting_args: Mapping[str, Any],
+    method_specific_arguments: Mapping[str, Any],
 ) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
 
     return base_advi(
@@ -60,7 +62,7 @@ def fullrank_advi(
         diagnostics=diagnostics,
         get_model_path=get_model_path,
         seed=seed,
-        extra_fitting_args=extra_fitting_args,
+        method_specific_arguments=method_specific_arguments,
         algorithm="fullrank",
     )
 
@@ -72,7 +74,7 @@ def meanfield_advi(
     diagnostics: Any,
     get_model_path: Callable,
     seed: Optional[int],
-    extra_fitting_args: Mapping[str, Any],
+    method_specific_arguments: Mapping[str, Any],
 ) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
     return base_advi(
         model_name=model_name,
@@ -80,7 +82,7 @@ def meanfield_advi(
         diagnostics=diagnostics,
         get_model_path=get_model_path,
         seed=seed,
-        extra_fitting_args=extra_fitting_args,
+        method_specific_arguments=method_specific_arguments,
         algorithm="meanfield",
     )
 
@@ -92,13 +94,13 @@ def base_advi(
     diagnostics: Any,
     get_model_path: Callable,
     seed: Optional[int],
-    extra_fitting_args: Mapping[str, Any],
+    method_specific_arguments: Mapping[str, Any],
     algorithm: str,
 ) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
 
     stan_model = get_compiled_model(model_name, get_model_path)
 
-    result = stan_model.vb(data=data, algorithm=algorithm, **extra_fitting_args)
+    result = stan_model.vb(data=data, algorithm=algorithm, **method_specific_arguments)
 
     sample_file = result["args"]["sample_file"].decode("utf-8")
     df = pd.read_csv(sample_file, comment="#")
@@ -107,7 +109,7 @@ def base_advi(
 
     diagnostic_values: Mapping[str, Any] = {}  # TODO
 
-    explicit_args = extra_fitting_args  # TODO
+    explicit_args = method_specific_arguments  # TODO
 
     return samples, diagnostic_values, explicit_args
 
