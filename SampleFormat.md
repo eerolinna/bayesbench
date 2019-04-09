@@ -1,4 +1,8 @@
-# Model 1
+# Outline
+
+This file shows several Stan models and the outputs from those models in both the current output format and the possible new output format that includes slots for prior, prior predictive, posterior predictive and datapoint likelihood outputs.
+
+# Model 1 (Eight schools)
 
 ```stan
 data {
@@ -142,18 +146,9 @@ generated quantities {
 }
 ```
 
-# Comments
+# Benefits of new output format
 
-For Stan we need extra information to be able to transform the Stan output to the new representation. Currently the information is provided in model info json files.
-
-For PyMC the outputs are essentially already in this format. If we want to follow the old format then we need to figure out how to convert PyMC to it (which is essentially impossible)
-
-We could also make it so that if the model follows certain conventions then the json info file is not needed.
-
-- If there is a variable named `log_lik` then it is the log likelihood.
-- If a variable has a trailing underscore it is assumed to be a prior or prior predictive draw. If there is a corresponding parameter without the underscore then it is prior, else it is prior predictive.
-- If a parameter has trailing `_hat` or `_pred` then it is a posterior predictive draw that is named by removing `_hat` or `_pred`.
-
+We can more easily compare for example only predictive distributions
 
 With the new representation running SBC becomes easy. Pseudocode:
 ```python
@@ -165,6 +160,20 @@ for prior_draw, prior_predictive_draw in zip(prior, prior_predictive):
 
     ranks = compute_ranks(output, prior_draw)
 ```
+
+For PyMC the outputs are essentially already in the new format. If we want to follow the old format then we need to figure out how to convert PyMC to it (which will be difficult)
+
+
+# Comments
+
+For Stan we need extra information to be able to transform the Stan output to the new representation. Currently the information is provided in model info json files.
+
+We could also make it so that if the model follows certain conventions then the json info file is not needed.
+
+- If there is a variable named `log_lik` then it is the log likelihood.
+- If a variable has a trailing underscore it is assumed to be a prior or prior predictive draw. If there is a corresponding parameter without the underscore then it is prior, else it is prior predictive.
+- If a parameter has trailing `_hat` or `_pred` then it is a posterior predictive draw that is named by removing `_hat` or `_pred`.
+
 
 One potential problem is that we regenerate prior and prior predictive draws each time we run inference for the model. If we want to avoid this then we'd need to have two Stan models: A generative model that generates prior and prior predictive draws and a normal model.
 
@@ -200,4 +209,6 @@ model {
 }
 ```
 
-Both of these approaches feel deficient when I know that for example PyMC can generate prior and prior predictive samples using just the equivalent of the "normal" model.
+Both of these approaches feel deficient when I know that for example PyMC can generate prior and prior predictive samples using just the equivalent of the "normal" model, however out of these the separate generative and regular model approach feels cleaner.
+
+We might also want to have two separate outputs: one for prior and prior predictive outputs, one for posterior, posterior predictive and log_likelihood outputs.
