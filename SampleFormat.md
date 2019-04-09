@@ -75,6 +75,8 @@ generated quantities {
 
 ## Model info json
 
+Stan models cannot be automatically converted into the new format, we need to include information about which model variables correspond to which slots. Here's one way of doing it.
+
 ```json
 {
     "posterior_predictive": [{"original": "y_hat", "rename": "y"}],
