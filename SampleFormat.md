@@ -4,6 +4,8 @@ This file shows several Stan models and the outputs from those models in both th
 
 # Model 1 (Eight schools)
 
+This model includes posterior, posterior predictive and datapoint likelihood outputs.
+
 ```stan
 data {
     int<lower=0> J;
@@ -81,6 +83,8 @@ generated quantities {
 ```
 
 # Model 2 (Binomial model)
+
+This model includes posterior, prior and prior predictive outputs.
 
 ```stan
 data {
