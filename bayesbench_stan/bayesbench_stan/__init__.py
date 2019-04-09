@@ -9,10 +9,11 @@
 
 # Advanced stuff: can we validate that the diagnostics actually work for the intermediate output that the inference method produces? We could sort of do this with some test cases probably
 
-from typing import Mapping, Any, Tuple, Callable, Optional
+from typing import Mapping, Any, Tuple, Callable, Optional, Dict, List, Sequence
 import pystan
 from . import stan_utility
 from bayesbench.output import Samples
+from collections import defaultdict
 import pandas as pd
 import numpy as np
 import json
@@ -107,9 +108,7 @@ def base_advi(
 
     samples = df.to_dict(orient="list")
 
-    # TODO: Right now arrays get individual keys (arr[1], arr[2] etc)
-    # Need to change that so MCMC and VI are compatible with each other
-    new_samples = {k: np.array(v) for (k, v) in samples.items()}
+    new_samples = transform_samples(samples)
     # here I should convert samples to the slots formation
     # Need to define the slots
     # Then in order to convert I need information from from {model}-info.json
@@ -197,3 +196,52 @@ def create_custom_inference_method(func, dataset, other_args):
 
     # So essentially this does some of the boring plumming
     # Pystan3 I think won't need the 1 iteration
+
+
+def transform_samples(samples: Mapping[str, List[Any]]):
+    """
+    Used for transforming samples from Stan's VI output to the format of Stan's MCMC output
+
+    Takes input that is of the form
+    {
+        ...
+        "eta.1": [...],
+        "eta.2": [...],
+        ...
+    }
+    and turns it into
+    {
+        ...
+        "eta": [[...], [...]],
+        ...
+    }
+    and then also transposes the lists to match the shape of MCMC output
+    and then turns all lists to numpy arrays (which is what MCMC outputs) 
+    """
+    merged_samples: Dict[str, List[Any]] = {}
+
+    lengths: Dict[str, int] = defaultdict(int)
+
+    for key in samples:
+        if "." in key:
+            actual_key, n_as_str = key.split(".")
+            n = int(n_as_str)
+            if n > lengths[actual_key]:
+                lengths[actual_key] = n
+
+    for actual_key in lengths:
+        print(actual_key)
+        merged_samples[actual_key] = [0] * lengths[actual_key]
+
+    for key in samples:
+        if "." in key:
+            actual_key, n_as_str = key.split(".")
+            n = int(n_as_str)
+
+            merged_samples[actual_key][n - 1] = samples[key]
+        else:
+            merged_samples[key] = samples[key]
+
+    new_samples = {k: np.array(v).transpose() for (k, v) in merged_samples.items()}
+
+    return new_samples
