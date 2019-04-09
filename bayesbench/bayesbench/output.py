@@ -1,5 +1,6 @@
 from dataclasses import dataclass, asdict
 from typing import Any, Sequence, Mapping, Tuple, Optional
+import numpy as np
 
 Samples = Mapping[str, Sequence[float]]
 
@@ -16,6 +17,13 @@ class RunConfig:
     seed: Optional[int]
     lang: str
 
+    def to_dict(self):
+        return asdict(self)
+
+    @classmethod
+    def from_dict(cls, dct):
+        return cls(**dct)
+
 
 @dataclass
 class Output:
@@ -29,7 +37,6 @@ class Output:
     # these time things should be optional and have default value None
     creation_time: Optional[float]  # unix time
     execution_time: Optional[float]
-
     # Seed is also optional
 
     run_config: RunConfig
@@ -43,7 +50,11 @@ class Output:
     @classmethod
     def from_dict(cls, dct):
         dct["run_config"] = RunConfig.from_dict(dct["run_config"])
-        return cls(**dct)
+        output = cls(**dct)
+
+        new_samples = {k: np.array(v) for (k, v) in output.samples.items()}
+        output.samples = new_samples
+        return output
 
 
 # Diagnostic output needs to be JSON serializable
