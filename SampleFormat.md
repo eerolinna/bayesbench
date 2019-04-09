@@ -159,7 +159,7 @@ We can more easily compare for example only predictive distributions
 With the new representation running SBC becomes easy. Pseudocode:
 ```python
 for prior_draw, prior_predictive_draw in zip(prior, prior_predictive):
-    # with model 2 this overwrites `y` from data with `y` from prior predictive draw
+    # for example with model 2 this overwrites `y` from data with `y` from prior predictive draw
     new_data = merge(original_data, prior_predictive_draw)
 
     output = run(model, new_data)
