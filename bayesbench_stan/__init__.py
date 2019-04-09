@@ -107,11 +107,14 @@ def base_advi(
 
     samples = df.to_dict(orient="list")
 
+    # TODO: Right now arrays get individual keys (arr[1], arr[2] etc)
+    # Need to change that so MCMC and VI are compatible with each other
+    new_samples = {k: np.array(v) for (k, v) in samples.items()}
     diagnostic_values: Mapping[str, Any] = {}  # TODO
 
     explicit_args = method_specific_arguments  # TODO
 
-    return samples, diagnostic_values, explicit_args
+    return new_samples, diagnostic_values, explicit_args
 
 
 # Stan 2 and 3 can have different packages, or at least different versions
