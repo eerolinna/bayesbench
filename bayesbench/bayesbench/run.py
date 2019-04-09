@@ -155,7 +155,10 @@ def save_output(*, output: Output, output_dir: str) -> None:
     # That is not a huge problem, but we can later look into if there is a better way to generate unique file names
     config_hash = get_hash(
         json.dumps(
-            output.run_config, sort_keys=True, ensure_ascii=True, separator=(",", ":")
+            output.run_config.to_dict(),
+            sort_keys=True,
+            ensure_ascii=True,
+            separators=(",", ":"),
         )
     )
 
