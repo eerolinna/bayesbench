@@ -1,24 +1,33 @@
 import yaml
 import os
 
-model_names = ["8_schools_noncentered"]
-dataset_names = ["8_schools"]
-methods = ["bayesbench_stan.nuts", "bayesbench_stan.fullrank_vi"]
+
+posterior_names = ["8_schools_noncentered"]
+methods = ["bayesbench_stan.meanfield_advi", "bayesbench_stan.fullrank_advi"]
 
 runs = []
 
-for model_name in model_names:
-    for dataset_name in dataset_names:
-        for method in methods:
-            runs.append(
-                {
-                    "model_name": model_name,
-                    "dataset_name": dataset_name,
-                    "inference_engine": method,
-                    "posterior_db_location": "/home/eero/default_posterior_db",
-                }
-            )
+tolerances = [0.01]
 
+n_iterations_list = [1000]
+
+for posterior_name in posterior_names:
+    for method in methods:
+        for tolerance in tolerances:
+            for n_iterations in n_iterations_list:
+                runs.append(
+                    {
+                        "posterior_name": posterior_name,
+                        "inference_engine": method,
+                        "posterior_db_location": "/home/eero/default_posterior_db",
+                        "diagnostics": ["psis_khat"],
+                        "method_specific_arguments": {
+                            "tol_rel_obj": tolerance,
+                            "iter": n_iterations,
+                        },
+                        "output_dir": "out",
+                    }
+                )
 yaml_contents = yaml.dump(runs)
 
 output_dir = os.path.dirname(os.path.abspath(__file__))
