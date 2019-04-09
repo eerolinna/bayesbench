@@ -119,6 +119,10 @@ def base_advi(
 
     model_info = get_model_info(model_name, get_model_path)
 
+    if model_info:
+        # Do stuff here
+        pass
+
     diagnostic_values: Mapping[str, Any] = {}  # TODO
 
     explicit_args = method_specific_arguments  # TODO
@@ -169,7 +173,9 @@ def get_compiled_model(model_name: str, get_model_path: Callable):
     return stan_model
 
 
-def get_model_info(model_name: str, get_model_path: Callable) -> Mapping[str, Any]:
+def get_model_info(
+    model_name: str, get_model_path: Callable
+) -> Optional[Mapping[str, Any]]:
     framework = "stan"
     file_extension = ".json"
     info_path = get_model_path(
@@ -177,6 +183,8 @@ def get_model_info(model_name: str, get_model_path: Callable) -> Mapping[str, An
         file_extension=file_extension,
         model_name=f"{model_name}-info",
     )
+    if info_path is None:
+        return None
     with open(info_path) as f:
         info = json.load(f)
 
