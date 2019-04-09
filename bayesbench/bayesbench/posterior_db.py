@@ -1,6 +1,8 @@
 from os.path import join
 import yaml
 import glob
+from .output import Output
+import json
 
 
 class PosteriorDatabase:
@@ -35,6 +37,26 @@ class PosteriorDatabase:
                 posteriors = yaml.safe_load(f)
                 for posterior in posteriors:
                     print(posterior["posterior_name"])
+
+    def load_gold_standard(self, posterior_name: str):
+        gold_standards_dir = join(self.location, "gold_standards")
+        paths = glob.glob(
+            gold_standards_dir + f"/**/{posterior_name}.json", recursive=True
+        )
+        num_found = len(paths)
+        assert num_found in [
+            0,
+            1,
+        ], f"There were {num_found} gold standards for the posterior {posterior_name}"
+
+        if num_found == 0:
+            return None
+        gold_standard_path = paths[0]
+        with open(gold_standard_path) as f:
+            output_dict = json.load(f)
+
+        output = Output.from_dict(output_dict)
+        return output
 
 
 def get_posteriors(location):
