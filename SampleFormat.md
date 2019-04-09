@@ -80,7 +80,7 @@ generated quantities {
 }
 ```
 
-# Model 2
+# Model 2 (Binomial model)
 
 ```stan
 data {
