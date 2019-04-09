@@ -42,7 +42,7 @@ def compare_means(outputs: Sequence[Output], posterior_db_location=None):
     return result
 
 
-def get_mean(output: np.Array):
+def get_mean(output: np.ndarray):
     result = {}
     for key in output.samples:
         values = output.samples[key]
