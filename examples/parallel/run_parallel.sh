@@ -8,3 +8,5 @@ cat arguments.json | parallel python run.py --args {} --output_dir ./output/
 # Alternative form
 cat arguments.json | parallel python -m bayesbench.run --args {} --output_dir ./output/
 
+# Yaml form
+python -m bayesbench.iterate_yaml config.yaml | parallel python -m bayesbench.run --args {} --output_dir ./output/
