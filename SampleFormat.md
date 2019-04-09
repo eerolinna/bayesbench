@@ -181,7 +181,7 @@ We could also make it so that if the model follows certain conventions then the 
 - If a parameter has trailing `_hat` or `_pred` then it is a posterior predictive draw that is named by removing `_hat` or `_pred`.
 
 
-One potential problem is that we regenerate prior and prior predictive draws each time we run inference for the model. If we want to avoid this then we'd need to have two Stan models: A generative model that generates prior and prior predictive draws and a normal model.
+One potential problem is that we regenerate prior and prior predictive draws each time we run inference for the model. If we want to avoid this then we'd need to have two Stan models: A generative model that generates prior and prior predictive draws and a regular model.
 
 With model 2 the generative model would be
 
@@ -215,6 +215,6 @@ model {
 }
 ```
 
-Both of these approaches feel deficient when I know that for example PyMC can generate prior and prior predictive samples using just the equivalent of the "normal" model, however out of these the separate generative and regular model approach feels cleaner.
+Both of these approaches feel deficient when I know that for example PyMC can generate prior and prior predictive samples using just the equivalent of the regular model, however out of these the separate generative and regular model approach feels cleaner.
 
 We might also want to have two separate outputs: one for prior and prior predictive outputs, one for posterior, posterior predictive and log_likelihood outputs.
