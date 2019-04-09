@@ -129,15 +129,33 @@ def base_advi(
 
 # Stan 2 and 3 can have different packages, or at least different versions
 
-# This will be deleted, unnecessary soon
-def stan_method(*, stan_model, method_name):
-    "method names should not contain dashes (-)"
-    stan_methods: Mapping[str, Any] = {
-        "stan_nuts": stan_model.sampling,
-        "stan_vb_fullrank": functools.partial(stan_model.vb, algorithm="fullrank"),
-        "stan_vb_meanfield": functools.partial(stan_model.vb, algorithm="meanfield"),
-    }
-    return stan_methods[method_name]
+
+def generate_prior_predictive(model_name, data, get_model_path):
+    model = get_generative_model(model_name=model_name, get_model_path=get_model_path)
+
+    fit = model.sampling(algorithm="Fixed_param")
+
+    samples = fit.extract()
+
+    # This contains both prior and prior predictive samples. Should find a way to extract them separately.
+    # For prior predictive there is not a corresponding parameter in the normal model
+    # For prior predictive variables there also is a dataset variable with the same name
+    # So we can use the data to figure out which are prior and which are prior predictive
+
+    raise Exception("Not finished yet")
+
+
+def get_generative_model(model_name: str, get_model_path: Callable):
+    framework = "stan"
+    file_extension = ".stan"
+
+    model_code_path = get_model_path(
+        framework=framework,
+        file_extension=file_extension,
+        model_name="gen_" + model_name,
+    )
+    stan_model = stan_utility.compile_model(model_code_path)
+    return stan_model
 
 
 def get_compiled_model(model_name: str, get_model_path: Callable):
