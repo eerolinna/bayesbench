@@ -12,6 +12,7 @@ torch = "*"
 pyro-ppl = "*"
 pandas = "*"
 bayesbench = {path = "./bayesbench", editable = true}
+bayesbench_stan = {path = "./bayesbench_stan", editable = true}
 
 [dev-packages]
 pylint = "*"
