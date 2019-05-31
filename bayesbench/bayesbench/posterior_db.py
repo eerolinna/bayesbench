@@ -1,10 +1,11 @@
+"""TODO docstring"""
 from os.path import join
-import yaml
 import glob
-from .output import Output
 import json
+import os
 from typing import Optional
-
+import yaml
+from .output import Output
 
 class PosteriorDatabase:
     def __init__(self, location):
