@@ -7,11 +7,11 @@ from typing import Optional
 import yaml
 from .output import Output
 
+
 class PosteriorDatabase:
     def __init__(self, location):
         self.location = location
         self.posteriors = get_posteriors(location)
-
 
     def get_model_path(self, *, posterior_name: str, framework: str) -> Optional[str]:
         """Obtains model file location for a given posterior and framework"""
@@ -20,7 +20,9 @@ class PosteriorDatabase:
         absolute_path = join(self.location, relative_path)
         return absolute_path
 
-    def get_model_path_raw(self, *, model_name, framework, file_extension) -> Optional[str]:
+    def get_model_path_raw(
+        self, *, model_name, framework, file_extension
+    ) -> Optional[str]:
         """This is currently not ported to new PDB structure. Instead there is a
         separate function for it. However that function can't do everything
         this one can so TODO do something with this
