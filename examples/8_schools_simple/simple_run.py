@@ -1,11 +1,6 @@
-import yaml
-import os
 import bayesbench
-import json
-from bayesbench.compare_means import compare_means
 
-
-posterior_names = ["8_schools_noncentered"]
+posterior_names = ["8_schools|noncentered"]
 methods = ["bayesbench_stan.meanfield_advi", "bayesbench_stan.fullrank_advi"]
 
 runs = []
@@ -22,29 +17,19 @@ for posterior_name in posterior_names:
                     {
                         "posterior_name": posterior_name,
                         "inference_engine": method,
-                        "posterior_db_location": "/home/eero/default_posterior_db",
-                        "diagnostics": ["psis_khat"],
+                        "diagnostics": [],
+                        "posterior_db_location": "/home/eero/posterior_db",
+                        "output_dir": "temp_out",
                         "method_specific_arguments": {
                             "tol_rel_obj": tolerance,
                             "iter": n_iterations,
                         },
-                        "output_dir": "out",
                     }
                 )
 
 
 outputs = bayesbench.run.run_many(runs)
 
-print(len(outputs))
+# result = bayesbench.benchmark(outputs)
 
-result = compare_means(outputs, posterior_db_location="/home/eero/default_posterior_db")
-
-print(result)
-
-output_dir = os.path.dirname(os.path.abspath(__file__))
-
-output_path = os.path.join(output_dir, "result.json")
-
-
-with open(output_path, "w") as f:
-    json.dump(result, f, indent=2, cls=bayesbench.run.NumpyEncoder)
+# print(result)
