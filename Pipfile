@@ -22,6 +22,9 @@ ipdb = "*"
 ipython = "*"
 arviz = "*"
 jupyter = "*"
+importmagic = "*"
+epc = "*"
+autoflake = "*"
 
 
 [requires]
