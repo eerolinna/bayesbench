@@ -9,14 +9,17 @@
 
 # Advanced stuff: can we validate that the diagnostics actually work for the intermediate output that the inference method produces? We could sort of do this with some test cases probably
 
-from typing import Mapping, Any, Tuple, Callable, Optional, Dict, List, Sequence
-import pystan
-from . import stan_utility
-from bayesbench.output import Samples
-from collections import defaultdict
-import pandas as pd
-import numpy as np
 import json
+from collections import defaultdict
+from typing import (Any, Callable, Dict, List, Mapping, Optional, Sequence,
+                    Tuple)
+
+import numpy as np
+import pandas as pd
+
+from bayesbench.output import Samples
+
+from . import stan_utility
 
 
 def nuts(

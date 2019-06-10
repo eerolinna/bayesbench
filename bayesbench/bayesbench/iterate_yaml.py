@@ -1,8 +1,7 @@
-import yaml
+import argparse
 import json
 
-import argparse
-
+import yaml
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -19,4 +18,3 @@ if __name__ == "__main__":
                 print(json.dumps(row))
         else:
             print(json.dumps(row))
-

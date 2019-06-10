@@ -1,10 +1,12 @@
 """TODO docstring"""
-from os.path import join
 import glob
 import json
 import os
+from os.path import join
 from typing import Optional
+
 import yaml
+
 from .output import Output
 
 
