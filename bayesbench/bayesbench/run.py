@@ -16,17 +16,19 @@
 # - Load model module with importlib, need to have standardized function name
 # - Should be pretty straightforward to adapt from stan code
 
-import json
-from typing import Dict, Any, Mapping, Sequence, Optional
-from .output import Output, RunConfig
-from .posterior_db import PosteriorDatabase
+import argparse
 import functools
-import numpy
-from hashlib import md5
+import importlib
+import json
 import os
 import time
-import importlib
-import argparse
+from hashlib import md5
+from typing import Any, Dict, Mapping, Optional, Sequence
+
+import numpy
+
+from .output import Output, RunConfig
+from .posterior_db import PosteriorDatabase
 
 
 def run(

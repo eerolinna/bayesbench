@@ -1,7 +1,9 @@
-import yaml
-import os
-import bayesbench
 import json
+import os
+
+import yaml
+
+import bayesbench
 from bayesbench.compare_means import compare_means
 
 

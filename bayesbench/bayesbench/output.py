@@ -1,8 +1,9 @@
-from dataclasses import dataclass, asdict, fields
-from typing import Any, Sequence, Mapping, Tuple, Optional
-import numpy as np
-from zipfile import ZipFile
 import json
+from dataclasses import asdict, dataclass, fields
+from typing import Any, Mapping, Optional, Sequence, Tuple
+from zipfile import ZipFile
+
+import numpy as np
 
 Samples = Mapping[str, Sequence[float]]
 
