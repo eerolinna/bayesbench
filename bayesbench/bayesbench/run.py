@@ -147,23 +147,20 @@ class NumpyEncoder(json.JSONEncoder):
         return json.JSONEncoder.default(self, obj)
 
 
-def get_hash(to_hash: str) -> str:
-    return md5(to_hash.encode("ascii")).hexdigest()
+def get_hash(to_hash: Mapping[str, Any]) -> str:
+    # This hashing is from https://stackoverflow.com/questions/5884066/hashing-a-dictionary
+    # NOTE: This might not be stable across machines and python versions.
+    # That is not a huge problem, but we can later look into if there is a better way to generate unique file names
+    json_string = json.dumps(
+        to_hash, sort_keys=True, ensure_ascii=True, separators=(",", ":")
+    )
+
+    return md5(json_string.encode("ascii")).hexdigest()
 
 
 def save_output(*, output: Output, output_dir: str) -> None:
 
-    # This hashing is from https://stackoverflow.com/questions/5884066/hashing-a-dictionary
-    # NOTE: This might not be stable across machines and python versions.
-    # That is not a huge problem, but we can later look into if there is a better way to generate unique file names
-    config_hash = get_hash(
-        json.dumps(
-            output.run_config.to_dict(),
-            sort_keys=True,
-            ensure_ascii=True,
-            separators=(",", ":"),
-        )
-    )
+    config_hash = get_hash(output.run_config.to_dict())
 
     filename = f"{config_hash}.json"
 
