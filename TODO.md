@@ -24,3 +24,5 @@ install many perhaps unnecessary packages. However if someone uses just stan and
 not pymc then we either have to have both as a dependency (not ideal) or we need
 ((to write error checking code that tells the user to install pymc if they try to))
 run code that requires pymc
+
+Make `run_many` run in parallel using multiprocessing
