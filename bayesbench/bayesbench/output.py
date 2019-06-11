@@ -86,12 +86,12 @@ class Output:
         return output
 
     def to_zip(self, filename: str):
-        with ZipFile(filename, "w") as zip:
+        with ZipFile(filename, "w") as zipfile:
             config = json.dumps(self.run_config)
-            zip.writestr("config.json", config)
+            zipfile.writestr("config.json", config)
 
             field_names = [
-                field.name for field in fields(self) if field.name is not "run_config"
+                field.name for field in fields(self) if field.name != "run_config"
             ]
             # This is equivalent to
             # {
@@ -101,15 +101,15 @@ class Output:
             # }
             rest = {field_name: getattr(self, field_name) for field_name in field_names}
 
-            zip.writestr("inference.json", json.dumps(rest))
+            zipfile.writestr("inference.json", json.dumps(rest))
 
     @classmethod
     def from_zip(cls, filename: str):
-        with ZipFile(filename) as zip:
-            with zip.open("config.json") as config_f:
+        with ZipFile(filename) as zipfile:
+            with zipfile.open("config.json") as config_f:
                 run_config_dict = json.load(config_f)
 
-            with zip.open("inference.json") as f:
+            with zipfile.open("inference.json") as f:
                 dct = json.load(f)
 
         dct["run_config"] = run_config_dict
