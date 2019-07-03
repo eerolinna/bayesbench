@@ -16,6 +16,7 @@ from typing import (Any, Callable, Dict, List, Mapping, Optional, Sequence,
 
 import numpy as np
 import pandas as pd
+from pystan.diagnostics import check_hmc_diagnostics
 
 from bayesbench.output import Samples
 
@@ -39,7 +40,7 @@ def nuts(
 
     samples = stan_fit.extract()
 
-    diagnostic_values: Mapping[str, Any] = {}  # TODO
+    diagnostic_values: Mapping[str, Any] = check_hmc_diagnostics(stan_fit)  # TODO
 
     explicit_args = method_specific_arguments  # TODO
 
@@ -227,7 +228,7 @@ def transform_samples(samples: Mapping[str, List[Any]]):
         ...
     }
     and then also transposes the lists to match the shape of MCMC output
-    and then turns all lists to numpy arrays (which is what MCMC outputs) 
+    and then turns all lists to numpy arrays (which is what MCMC outputs)
     """
     merged_samples: Dict[str, List[Any]] = {}
 
