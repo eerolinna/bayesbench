@@ -6,12 +6,16 @@
 
 # Print number of run jobs
 
+import json
+import os
 from typing import Any, Mapping
 
 import bayesbench
 
-from .constants import output_dir, posterior_db_location
+from .constants import bayesbench_dir, output_dir, posterior_db_location
 from .posteriors import posteriors
+
+posteriors_ran_path = os.path.join(bayesbench_dir, "ran.json")
 
 
 def create_run(posterior_name: str) -> Mapping[str, Any]:
@@ -29,11 +33,21 @@ def create_run(posterior_name: str) -> Mapping[str, Any]:
 def main():
     runs = map(create_run, posteriors)
     outputs = []
+    with open(posteriors_ran_path) as f:
+        existing_posteriors = json.load(f)
     for r in runs:
         # TODO check if same exact run has been completed already
         posterior_name = r["posterior_name"]
+        if posterior_name in existing_posteriors:
+            continue
         if "lda" in posterior_name:
             continue
+
+        if "radon" in posterior_name:
+            continue
+        with open(posteriors_ran_path, "w") as f:
+            existing_posteriors = existing_posteriors + [posterior_name]
+            json.dump(existing_posteriors, f)
         print(f"Starting {posterior_name}")
         output = bayesbench.run.run(**r)
         print(f"""Finished {posterior_name}""")

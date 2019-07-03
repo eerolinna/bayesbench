@@ -1,12 +1,11 @@
 import functools
 import glob
 import json
-from collections import defaultdict
+from collections import OrderedDict, defaultdict
 
 import numpy as np
 import pandas as pd
-from scipy.stats import ks_2samp, mood, ttest_ind
-from universal_divergence import estimate
+from scipy.stats import kruskal, ks_2samp, levene, mood, ranksums, ttest_ind
 
 from bayesbench.output import Output
 
@@ -14,6 +13,50 @@ from .compare import compare
 from .constants import output_dir
 
 wanted_posterior = "8_schools|noncentered"
+
+
+def diagnostics_good(output):
+    name = output.run_config.posterior_name
+
+    return all(output.diagnostics.values())
+
+
+def get_gold_standard_names():
+    gold_standards = {}
+    files = glob.glob(output_dir + "/*.json")
+    for filepath in files:
+        output = get_output(filepath)
+        run_config = output.run_config
+        posterior_name = run_config.posterior_name
+        if run_config.method_name == "nuts":
+            if diagnostics_good(output):
+                gold_standards[posterior_name] = output
+        # check if posterior is 8 schools
+
+    return gold_standards.keys()
+
+
+def get_all():
+    gold_standards = {}
+    method_outputs = defaultdict(dict)
+    files = glob.glob(output_dir + "/*.json")
+    for filepath in files:
+        output = get_output(filepath)
+        run_config = output.run_config
+        posterior_name = run_config.posterior_name
+        if run_config.method_name == "nuts":
+            if diagnostics_good(output):
+                gold_standards[posterior_name] = output
+        else:
+            tolerance = run_config.method_specific_arguments.get("tol_rel_obj", 0.01)
+            method_name = f"{run_config.method_name} tol={tolerance}"
+            method_outputs[posterior_name][method_name] = output
+        # check if posterior is 8 schools
+    gold_standard_names = gold_standards.keys()
+    final_method_outputs = {}
+    for name in gold_standard_names:
+        final_method_outputs[name] = method_outputs[name]
+    return final_method_outputs, gold_standards
 
 
 def get_8_schools():
@@ -48,11 +91,11 @@ def scipy_wrapper(x, y, f):
         if p < threshold:
             p_str = f"p < {threshold}"
         else:
-            p_str = f"p = {p:.4f}"
+            p_str = f"p = {p:.2f}"
         return f"{p_str} ({s:.2f})"
 
     s, p = f(x, y)
-    threshold = 0.005
+    threshold = 0.01
     if isinstance(s, float):
         return format_s_p(s, p)
     if isinstance(s, np.ndarray):
@@ -65,13 +108,16 @@ def scipy_wrapper(x, y, f):
 
 
 def try_stuff():
-    outputs, gold_standards = get_8_schools()
+    outputs, gold_standards = get_all()
     mean_wrapper = functools.partial(
         scipy_wrapper, f=functools.partial(ttest_ind, equal_var=False)
     )
     ks_wrapper = functools.partial(scipy_wrapper, f=ks_2samp)
     moods_wrapper = functools.partial(scipy_wrapper, f=mood)
-    comparisons = {"mean": mean_wrapper, "mood": moods_wrapper}
+    kruskal_wrapper = functools.partial(scipy_wrapper, f=kruskal)
+    ranksums_wrapper = functools.partial(scipy_wrapper, f=ranksums)
+    levene_wrapper = functools.partial(scipy_wrapper, f=levene)
+    comparisons = {"Mean (T-test)": mean_wrapper, "Mood's median test": moods_wrapper}
     r = compare(outputs, gold_standards, comparisons)
     return r
 
@@ -82,7 +128,9 @@ def to_dataframe():
     for posterior_name, posterior_comparisons in r.items():
         temp_df = {}
         for comparison_name, comparison_values in posterior_comparisons.items():
-            temp_df[comparison_name] = pd.DataFrame.from_dict(comparison_values)
+            sorted_items = sorted(comparison_values.items(), key=lambda x: x[0])
+            new_comparison_values = OrderedDict(sorted_items)
+            temp_df[comparison_name] = pd.DataFrame.from_dict(new_comparison_values)
         frames[posterior_name] = pd.concat(temp_df, axis=1)
 
     return frames
@@ -97,6 +145,7 @@ def frames_to_html():
 <head>
   <meta charset="utf-8">
   <title>Experiments</title>
+  <link rel="stylesheet" href="https://cdn.jupyter.org/notebook/5.1.0/style/style.min.css">
 </head>
 <body>
     """
