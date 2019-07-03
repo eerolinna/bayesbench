@@ -101,11 +101,15 @@ def run(
     return output
 
 
-def run_many(runs):
-    results = []
-    for run_data in runs:
-        results.append(run(**run_data))
+def apply_run(run_data):
+    return run(**run_data)
 
+
+def run_many(runs):
+    import multiprocessing
+
+    pool = multiprocessing.Pool(7)
+    results = pool.map(apply_run, runs)
     return results
 
 
