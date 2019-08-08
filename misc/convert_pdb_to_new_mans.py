@@ -22,9 +22,9 @@ def convert(posterior_info):
     """
     data_path = posterior_info["data"]
     data_name = get_file_name(data_path)
-
-    model_name = get_file_name(posterior_info["model"]["stan"])
+    
     model_code_dict = posterior_info["model"]
+    model_name = get_file_name(model_code_dict["stan"])
 
     data_info = {"data_file": data_path, "name": data_name}
 
