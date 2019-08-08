@@ -4,8 +4,10 @@ See the test function for desciption of what this module does
 
 import glob
 import json
+import os
 from pathlib import Path
 
+base_dir = "/home/eero/posterior_database"
 
 def get_file_name(path):
     """Given a full file path return just the filename without extension """
@@ -29,7 +31,7 @@ def convert(posterior_info):
 
     data_info = {"data_file": data_path}
     
-    old_model_info_path = stan_model_path.replace("stan", "info.json")
+    old_model_info_path = os.path.join(base_dir, stan_model_path.replace("stan", "info.json"))
     
     with open(old_model_info_path) as f:
         old_model_info = json.load(f)
@@ -76,7 +78,6 @@ def test_convert():
 
 
 def get_new_files():
-    base_dir = "/home/eero/posterior_database"
 
     posterior_dir = base_dir + "/posteriors"
     json_files = glob.glob(posterior_dir + "/*.json")
