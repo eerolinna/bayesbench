@@ -16,6 +16,12 @@ def get_file_name(path):
     # with_suffix is needed in case the file has multiple extensions
     return p.with_suffix("").stem
 
+def get_old_info(old_info_path):
+    if not os.path.exists(old_info_path):
+        return {}
+    
+    with open(old_info_path) as f:
+        return json.load(f)
 
 def convert(posterior_info):
     """Converts old style posterior descriptions to new style. See the test
@@ -25,16 +31,20 @@ def convert(posterior_info):
     data_path = posterior_info["data"]
     data_name = get_file_name(data_path)
     
+    old_data_info_path = os.path.join(base_dir, data_path.replace(".json.zip", ".info.json"))
+    
+    old_data_info = get_old_info(old_data_info_path)
+    
     model_code_dict = posterior_info["model"]
     stan_model_path = model_code_dict["stan"]
     model_name = get_file_name(stan_model_path)
 
-    data_info = {"data_file": data_path}
+    data_info = {**old_data_info, "data_file": data_path}
     
     old_model_info_path = os.path.join(base_dir, stan_model_path.replace("stan", "info.json"))
     
-    with open(old_model_info_path) as f:
-        old_model_info = json.load(f)
+    old_model_info = get_old_info(old_model_info_path)
+    
     model_info = {**old_model_info, "model_code": model_code_dict}
 
     new_posterior_info = {**posterior_info, "data": data_name, "model": model_name}
