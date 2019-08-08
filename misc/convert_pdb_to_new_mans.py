@@ -60,15 +60,17 @@ def test_convert():
     }
     # 2. data description
     expected_data_info = {
-        "name": "prideprejustice_chapter",
         "data_file": "content/data/prideprejustice_chapter.json",
     }
     # 3. model description
     expected_model_info = {
         "model_code": {"stan": "content/models/latent_dirichlet_allocation/lda.stan"},
-        "name": "lda",
+        "title": "",
+        "description": "",
+        "urls": [],
+        "references": [],
+        "keywords": []
     }
-
     # Check that it actually does
     actual_data_info, _, actual_model_info, _, actual_new_posterior = convert(original)
 
