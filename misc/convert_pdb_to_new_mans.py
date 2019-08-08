@@ -26,9 +26,9 @@ def convert(posterior_info):
     model_code_dict = posterior_info["model"]
     model_name = get_file_name(model_code_dict["stan"])
 
-    data_info = {"data_file": data_path, "name": data_name}
+    data_info = {"data_file": data_path}
 
-    model_info = {"model_code": model_code_dict, "name": model_name}
+    model_info = {"model_code": model_code_dict}
 
     new_posterior_info = {**posterior_info, "data": data_name, "model": model_name}
 
