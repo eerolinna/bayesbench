@@ -20,8 +20,8 @@ def convert(posterior_info):
     function for description
 
     """
-    data_name = get_file_name(posterior_info["data"])
     data_path = posterior_info["data"]
+    data_name = get_file_name(data_path)
 
     model_name = get_file_name(posterior_info["model"]["stan"])
     model_code_dict = posterior_info["model"]
