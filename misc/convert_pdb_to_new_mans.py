@@ -24,11 +24,16 @@ def convert(posterior_info):
     data_name = get_file_name(data_path)
     
     model_code_dict = posterior_info["model"]
-    model_name = get_file_name(model_code_dict["stan"])
+    stan_model_path = model_code_dict["stan"]
+    model_name = get_file_name(stan_model_path)
 
     data_info = {"data_file": data_path}
-
-    model_info = {"model_code": model_code_dict}
+    
+    old_model_info_path = stan_model_path.replace("stan", "info.json")
+    
+    with open(old_model_info_path) as f:
+        old_model_info = json.load(f)
+    model_info = {**old_model_info, "model_code": model_code_dict}
 
     new_posterior_info = {**posterior_info, "data": data_name, "model": model_name}
 
