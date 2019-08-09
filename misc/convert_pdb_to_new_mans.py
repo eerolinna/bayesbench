@@ -47,7 +47,7 @@ def convert(posterior_info):
     
     model_info = {**old_model_info, "model_code": model_code_dict}
 
-    new_posterior_info = {**posterior_info, "data": data_name, "model": model_name}
+    new_posterior_info = {**posterior_info, "data_name": data_name, "model_name": model_name}
 
     # Maybe would need to return file locations too? Where these should be saved
     return data_info, data_name, model_info, model_name, new_posterior_info
@@ -64,14 +64,15 @@ def test_convert():
     # Into
     # 1. new posterior description
     expected_new_posterior = {
-        "data": "prideprejustice_chapter",
-        "model": "lda",
+        "data_name": "prideprejustice_chapter",
+        "model_name": "lda",
         "gold_standard": None,
     }
     # 2. data description
-    expected_data_info = {
-        "data_file": "content/data/prideprejustice_chapter.json",
-    }
+    expected_data_file = "content/data/prideprejustice_chapter.json"
+    
+    expected_data_keys = {"title", "references", "keywords", "description", "urls", "data_file}
+    
     # 3. model description
     expected_model_info = {
         "model_code": {"stan": "content/models/latent_dirichlet_allocation/lda.stan"},
@@ -84,7 +85,8 @@ def test_convert():
     # Check that it actually does
     actual_data_info, _, actual_model_info, _, actual_new_posterior = convert(original)
 
-    assert actual_data_info == expected_data_info
+    assert actual_data_info["data_file"] == expected_data_file
+    assert set(actual_data_info.keys()) == expected_data_keys 
     assert actual_model_info == expected_model_info
     assert actual_new_posterior == expected_new_posterior
 
