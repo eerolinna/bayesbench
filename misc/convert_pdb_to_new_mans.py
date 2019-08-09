@@ -71,7 +71,7 @@ def test_convert():
     # 2. data description
     expected_data_file = "content/data/prideprejustice_chapter.json"
     
-    expected_data_keys = {"title", "references", "keywords", "description", "urls", "data_file}
+    expected_data_keys = {"title", "references", "keywords", "description", "urls", "data_file"}
     
     # 3. model description
     expected_model_info = {
