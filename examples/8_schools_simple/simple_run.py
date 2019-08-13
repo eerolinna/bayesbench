@@ -1,7 +1,7 @@
 import bayesbench
 
 posterior_names = ["8_schools|noncentered"]
-methods = ["bayesbench_stan.meanfield_advi", "bayesbench_stan.fullrank_advi"]
+methods = ["fullrank", "meanfield"]
 
 runs = []
 
@@ -16,13 +16,14 @@ for posterior_name in posterior_names:
                 runs.append(
                     {
                         "posterior_name": posterior_name,
-                        "inference_engine": method,
+                        "inference_engine": "bayesbench_stan.vb",
                         "diagnostics": [],
                         "posterior_db_location": "/home/eero/posterior_db",
                         "output_dir": "temp_out",
                         "method_specific_arguments": {
                             "tol_rel_obj": tolerance,
                             "iter": n_iterations,
+                            "algorithm": method,
                         },
                     }
                 )
