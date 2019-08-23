@@ -31,7 +31,8 @@ from typing import Sequence
 
 import numpy
 
-from .posterior_db import PosteriorDatabase
+from posterior_db import Posterior
+from posterior_db import PosteriorDatabase
 
 from .output import Output
 from .output import RunConfig
