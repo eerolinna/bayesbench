@@ -57,7 +57,7 @@ def nuts(
     return samples, diagnostic_values, explicit_args
 
 
-def fullrank_advi(
+def vb(
     *,
     model_name: str,
     data: Mapping[str, Any],
@@ -66,48 +66,7 @@ def fullrank_advi(
     seed: Optional[int],
     method_specific_arguments: Mapping[str, Any],
 ) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
-
-    return base_advi(
-        model_name=model_name,
-        data=data,
-        diagnostics=diagnostics,
-        get_model_path=get_model_path,
-        seed=seed,
-        method_specific_arguments=method_specific_arguments,
-        algorithm="fullrank",
-    )
-
-
-def meanfield_advi(
-    *,
-    model_name: str,
-    data: Mapping[str, Any],
-    diagnostics: Any,
-    get_model_path: Callable,
-    seed: Optional[int],
-    method_specific_arguments: Mapping[str, Any],
-) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
-    return base_advi(
-        model_name=model_name,
-        data=data,
-        diagnostics=diagnostics,
-        get_model_path=get_model_path,
-        seed=seed,
-        method_specific_arguments=method_specific_arguments,
-        algorithm="meanfield",
-    )
-
-
-def base_advi(
-    *,
-    model_name: str,
-    data: Mapping[str, Any],
-    diagnostics: Any,
-    get_model_path: Callable,
-    seed: Optional[int],
-    method_specific_arguments: Mapping[str, Any],
-    algorithm: str,
-) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
+    algorithm = method_specific_arguments["algorithm"]
 
     stan_model = get_compiled_model(model_name, get_model_path)
 
@@ -171,13 +130,10 @@ def get_generative_model(model_name: str, get_model_path: Callable):
     return stan_model
 
 
-def get_compiled_model(model_name: str, get_model_path: Callable):
+def get_compiled_model(get_model_path: Callable):
 
     framework = "stan"
-    file_extension = ".stan"
-    model_code_path = get_model_path(
-        framework=framework, file_extension=file_extension, model_name=model_name
-    )
+    model_code_path = get_model_path(framework)
 
     stan_model = stan_utility.compile_model(model_code_path)
     return stan_model
