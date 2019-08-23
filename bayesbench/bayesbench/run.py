@@ -182,6 +182,9 @@ def save_output(*, output: Output, output_dir: str) -> None:
 
     full_filename = os.path.join(output_dir, filename)
 
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
     with open(full_filename, "w") as f:
         json.dump(output.to_dict(), f, cls=NumpyEncoder)
 
