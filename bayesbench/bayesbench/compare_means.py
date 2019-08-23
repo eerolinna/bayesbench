@@ -1,10 +1,14 @@
 from bayesbench.posterior_db import PosteriorDatabase
-from collections import defaultdict
-from typing import Sequence, Mapping, List, Any
-from bayesbench.output import Output
 import json
+from collections import defaultdict
+from typing import Any
+from typing import List
+from typing import Mapping
+from typing import Sequence
+
 import numpy as np
 
+from bayesbench.output import Output
 
 def compare_means(outputs: Sequence[Output], posterior_db_location=None):
     result: Mapping[str, List[Any]] = defaultdict(list)
