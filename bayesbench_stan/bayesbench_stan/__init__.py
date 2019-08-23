@@ -10,6 +10,7 @@
 # Advanced stuff: can we validate that the diagnostics actually work for the intermediate output that the inference method produces? We could sort of do this with some test cases probably
 
 import json
+import os
 from collections import defaultdict
 from typing import Any
 from typing import Callable
@@ -65,11 +66,10 @@ def vb(
     seed: Optional[int],
     method_specific_arguments: Mapping[str, Any],
 ) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
-    algorithm = method_specific_arguments["algorithm"]
 
-    stan_model = get_compiled_model(model_name, get_model_path)
+    stan_model = get_compiled_model(get_model_path)
 
-    result = stan_model.vb(data=data, algorithm=algorithm, **method_specific_arguments)
+    result = stan_model.vb(data=data, **method_specific_arguments)
 
     sample_file = result["args"]["sample_file"].decode("utf-8")
     df = pd.read_csv(sample_file, comment="#")
@@ -84,12 +84,6 @@ def vb(
     # Later we should remove arviz because that lets us avoid a dependency, but for now arviz is a good thing to save time
 
     # Hmm arviz might not work because it seems to expect MCMC result. Then I probably need to write the logic myself
-
-    model_info = get_model_info(model_name, get_model_path)
-
-    if model_info:
-        # Do stuff here
-        pass
 
     diagnostic_values: Mapping[str, Any] = {}  # TODO
 
@@ -136,24 +130,6 @@ def get_compiled_model(get_model_path: Callable):
 
     stan_model = stan_utility.compile_model(model_code_path)
     return stan_model
-
-
-def get_model_info(
-    model_name: str, get_model_path: Callable
-) -> Optional[Mapping[str, Any]]:
-    framework = "stan"
-    file_extension = ".json"
-    info_path = get_model_path(
-        framework=framework,
-        file_extension=file_extension,
-        model_name=f"{model_name}-info",
-    )
-    if info_path is None:
-        return None
-    with open(info_path) as f:
-        info = json.load(f)
-
-    return info
 
 
 # There should be a function that can be used to create inference engine with custom inference methods
