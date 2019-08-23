@@ -23,12 +23,18 @@ import json
 import os
 import time
 from hashlib import md5
-from typing import Any, Dict, Mapping, Optional, Sequence
+from typing import Any
+from typing import Dict
+from typing import Mapping
+from typing import Optional
+from typing import Sequence
 
 import numpy
 
-from .output import Output, RunConfig
 from .posterior_db import PosteriorDatabase
+
+from .output import Output
+from .output import RunConfig
 
 
 def run(
