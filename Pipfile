@@ -8,8 +8,6 @@ pystan = "<3.0.0"
 numpy = "*"
 pymc3 = "*"
 pyaml = "*"
-torch = "*"
-pyro-ppl = "*"
 pandas = "*"
 bayesbench = {path = "./bayesbench", editable = true}
 bayesbench_stan = {path = "./bayesbench_stan", editable = true}
@@ -25,6 +23,7 @@ jupyter = "*"
 importmagic = "*"
 epc = "*"
 autoflake = "*"
+isort = "*"
 
 
 [requires]
