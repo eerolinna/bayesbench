@@ -11,8 +11,14 @@
 
 import json
 from collections import defaultdict
-from typing import (Any, Callable, Dict, List, Mapping, Optional, Sequence,
-                    Tuple)
+from typing import Any
+from typing import Callable
+from typing import Dict
+from typing import List
+from typing import Mapping
+from typing import Optional
+from typing import Sequence
+from typing import Tuple
 
 import numpy as np
 import pandas as pd
