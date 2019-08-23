@@ -7,8 +7,9 @@ from typing import Sequence
 
 import numpy as np
 
-from bayesbench.output import Output
 from posterior_db import PosteriorDatabase
+
+from .output import Output
 
 
 def compare_means(outputs: Sequence[Output], posterior_db_location=None):
