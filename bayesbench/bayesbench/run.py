@@ -68,13 +68,11 @@ def run(
 
     posterior_db = PosteriorDatabase(posterior_db_location)
 
-    dataset_path = posterior_db.get_dataset_path(posterior_name=posterior_name)
-    model_name = posterior_db.get_model_name(posterior_name)
+    posterior = Posterior(posterior_name, posterior_db)
+    dataset = posterior.dataset()
+    model_name = posterior.posterior_info["model_name"]
 
     inference_engine_name, method_name = inference_engine.rsplit(".", 1)
-
-    with open(dataset_path) as json_f:
-        dataset = json.load(json_f)
 
     inference_engine_module = importlib.import_module(inference_engine_name)
 
@@ -86,7 +84,7 @@ def run(
         model_name=model_name,
         data=dataset,
         diagnostics=diagnostics,
-        get_model_path=posterior_db.get_model_path,
+        get_model_path=posterior.model_code_file_path,
         seed=seed,
         method_specific_arguments=method_specific_arguments,
     )
