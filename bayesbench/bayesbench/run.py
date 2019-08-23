@@ -110,11 +110,18 @@ def apply_run(run_data):
     return run(**run_data)
 
 
-def run_many(runs):
-    import multiprocessing
+def run_many(runs, parallel=True):
+    if parallel:
+        import multiprocessing
 
-    pool = multiprocessing.Pool(7)
-    results = pool.map(apply_run, runs)
+        pool = multiprocessing.Pool(7)
+        results = pool.map(apply_run, runs)
+        return results
+
+    results = []
+    for run in runs:
+        results.append(apply_run(run))
+
     return results
 
 
