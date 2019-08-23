@@ -1,4 +1,3 @@
-from bayesbench.posterior_db import PosteriorDatabase
 import json
 from collections import defaultdict
 from typing import Any
@@ -9,6 +8,8 @@ from typing import Sequence
 import numpy as np
 
 from bayesbench.output import Output
+from posterior_db import PosteriorDatabase
+
 
 def compare_means(outputs: Sequence[Output], posterior_db_location=None):
     result: Mapping[str, List[Any]] = defaultdict(list)
