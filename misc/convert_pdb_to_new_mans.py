@@ -31,7 +31,7 @@ def convert(posterior_info):
     data_path = posterior_info["data"]
     data_name = get_file_name(data_path)
     
-    old_data_info_path = os.path.join(base_dir, data_path.replace(".json.zip", ".info.json"))
+    old_data_info_path = os.path.join(base_dir, data_path.replace(".json", ".info.json"))
     
     old_data_info = get_old_info(old_data_info_path)
     
@@ -48,9 +48,10 @@ def convert(posterior_info):
     model_info = {**old_model_info, "model_code": model_code_dict}
 
     new_posterior_info = {**posterior_info, "data_name": data_name, "model_name": model_name}
-
+    del new_posterior_info["model"]
+    del new_posterior_info["data"]
     # Maybe would need to return file locations too? Where these should be saved
-    return data_info, data_name, model_info, model_name, new_posterior_info
+    return data_info, data_name, model_info, model_name, new_posterior_info, old_data_info_path, old_model_info_path
 
 
 def test_convert():
@@ -90,6 +91,8 @@ def test_convert():
     assert actual_model_info == expected_model_info
     assert actual_new_posterior == expected_new_posterior
 
+    print("Pass!")
+
 
 def get_new_files():
 
@@ -97,14 +100,18 @@ def get_new_files():
     json_files = glob.glob(posterior_dir + "/*.json")
 
     new_files = {}
+    to_delete = []
 
     for filepath in json_files:
         with open(filepath) as f:
             contents = json.load(f)
-        data_info, data_name, model_info, model_name, new_posterior = convert(contents)
+        data_info, data_name, model_info, model_name, new_posterior, old_data_info_path, old_model_info_path = convert(contents)
+	
+        to_delete.append(old_data_info_path)
+        to_delete.append(old_model_info_path)
 
-        data_info_path = base_dir + "/data/" + data_name + ".json"
-        model_info_path = base_dir + "/models/" + model_name + ".json"
+        data_info_path = base_dir + "/datasets/" + data_name + ".info.json"
+        model_info_path = base_dir + "/models/" + model_name + ".info.json"
 
         posterior_name = get_file_name(filepath)
         new_posterior_path = base_dir + "/posteriors/" + posterior_name + ".json"
@@ -112,16 +119,28 @@ def get_new_files():
         new_files[new_posterior_path] = new_posterior
         new_files[data_info_path] = data_info
         new_files[model_info_path] = model_info
-    return new_files
+    return new_files, to_delete
 
+
+def maybe_delete(path):
+    if os.path.exists(path):
+        #todo delete
+        if path.startswith("/home/eero/posterior_database"):
+            os.remove(path)
 
 def write_new_files():
-    new_files = get_new_files()
+    new_files, to_delete = get_new_files()
 
     for path in new_files:
         contents = new_files[path]
+        directory = os.path.dirname(path)
+        if not os.path.exists(directory):
+            os.makedirs(directory)
         with open(path, "w") as f:
             json.dump(contents, f, indent=2)
+
+    for path in to_delete:
+        maybe_delete(path)
 
 
 def test_multiple_extensions():
