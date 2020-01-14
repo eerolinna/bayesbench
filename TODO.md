@@ -26,3 +26,18 @@ not pymc then we either have to have both as a dependency (not ideal) or we need
 run code that requires pymc
 
 Make `run_many` run in parallel using multiprocessing
+
+
+Make decorator `load_model(framework)` that calls `model.implementation(framework).load()`
+
+Data is loaded by default
+
+Update to use `posteriordb`
+
+Add CI
+
+Add test that runs pymc and stan 8 schools model and add it to CI
+
+Remove unnecessary code
+
+Remove pipfile
