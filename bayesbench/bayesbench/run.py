@@ -3,19 +3,15 @@
 # - path to json dataset
 # - method to use: nuts / hmc / vi-fullrank / vi-meanfield
 # - output directory
-
 # Write some code for loading also
 # - load all outputs from directory to list
 # - or load some specified output (give model file and give method name, or list of these)
 # Then user can do whatever they want with the results
 # Should be able to load edward/pymc results too
-
-
 # Edward & pymc
 # - I guess easiest to have model file and dataset separately, then can reuse datasets
 # - Load model module with importlib, need to have standardized function name
 # - Should be pretty straightforward to adapt from stan code
-
 import argparse
 import functools
 import importlib
@@ -23,11 +19,16 @@ import json
 import os
 import time
 from hashlib import md5
-from typing import Any, Dict, Mapping, Optional, Sequence
+from typing import Any
+from typing import Dict
+from typing import Mapping
+from typing import Optional
+from typing import Sequence
 
 import numpy
 
-from .output import Output, RunConfig
+from .output import Output
+from .output import RunConfig
 from .posterior_db import PosteriorDatabase
 
 

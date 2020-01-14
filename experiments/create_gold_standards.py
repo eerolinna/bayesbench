@@ -1,18 +1,16 @@
 # Import names of all posteriors (put it in a different file so other files can import it too)
-
 # Check which have not been created already, print number of them
-
 # run_many on the resulting jobs
-
 # Print number of run jobs
-
 import json
 import os
-from typing import Any, Mapping
+from typing import Any
+from typing import Mapping
 
 import bayesbench
-
-from .constants import bayesbench_dir, output_dir, posterior_db_location
+from .constants import bayesbench_dir
+from .constants import output_dir
+from .constants import posterior_db_location
 from .posteriors import posteriors
 
 posteriors_ran_path = os.path.join(bayesbench_dir, "ran.json")

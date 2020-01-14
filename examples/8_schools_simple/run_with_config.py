@@ -1,9 +1,11 @@
 # Run by loading a config file
-import yaml
+import json
 import os
+
+import yaml
+
 import bayesbench
 from bayesbench.compare_means import compare_means
-import json
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 

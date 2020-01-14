@@ -10,4 +10,3 @@ def enumerate_possibilities(knowledge_base):
     Have also a function that prints the iterated results to file. Then this file can be used for creating cluster runs: one run per (model, dataset, method)
     """
     pass
-

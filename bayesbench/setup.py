@@ -11,4 +11,3 @@ setup(
     packages=["bayesbench"],
     zip_safe=False,
 )
-

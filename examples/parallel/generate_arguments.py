@@ -1,5 +1,6 @@
-import bayesbench
 import json
+
+import bayesbench
 
 bayesbench.generate_arguments_file("arguments.json", knowledge_db="kb_location")
 

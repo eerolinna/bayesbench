@@ -1,7 +1,9 @@
-import yaml
-import os
-import bayesbench
 import json
+import os
+
+import yaml
+
+import bayesbench
 
 # For this simple example only run a small number of posteriors
 posterior_names = """radon_partial_pooling2

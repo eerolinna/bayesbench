@@ -1,7 +1,13 @@
 import importlib
-import pymc3 as pm
 import json
-from typing import Mapping, Any, Optional, Callable, Tuple
+from typing import Any
+from typing import Callable
+from typing import Mapping
+from typing import Optional
+from typing import Tuple
+
+import pymc3 as pm
+
 from bayesbench import Samples
 
 """

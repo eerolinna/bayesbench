@@ -1,16 +1,21 @@
 import functools
 import glob
 import json
-from collections import OrderedDict, defaultdict
+from collections import defaultdict
+from collections import OrderedDict
 
 import numpy as np
 import pandas as pd
-from scipy.stats import kruskal, ks_2samp, levene, mood, ranksums, ttest_ind
-
-from bayesbench.output import Output
+from scipy.stats import kruskal
+from scipy.stats import ks_2samp
+from scipy.stats import levene
+from scipy.stats import mood
+from scipy.stats import ranksums
+from scipy.stats import ttest_ind
 
 from .compare import compare
 from .constants import output_dir
+from bayesbench.output import Output
 
 wanted_posterior = "8_schools|noncentered"
 

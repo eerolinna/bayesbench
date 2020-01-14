@@ -9,6 +9,7 @@ import yaml
 
 from .output import Output
 
+
 class PosteriorDatabase:
     def __init__(self, location):
         self.location = location
