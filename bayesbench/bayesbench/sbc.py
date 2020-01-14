@@ -8,7 +8,7 @@ from typing import Sequence
 from .posterior_db import PosteriorDatabase
 from .run import run
 
-
+"""
 def sbc(
     *,
     posterior_db_location: str,
@@ -32,6 +32,10 @@ def sbc(
 
     # After we have prior and prior predictive samples we can just call run with new data and postprocess the results to obtain ranks
     all_ranks = []
+
+    prior: Any = []
+    prior_predictive: Any = []
+    compute_ranks = lambda x: x
     for prior_draw, prior_predictive_draw in zip(prior, prior_predictive):
         # with model 2 this overwrites `y` from data with `y` from prior predictive draw
         new_data = merge(original_data, prior_predictive_draw)
@@ -55,3 +59,5 @@ def sbc(
 
 def merge(original_data, new_data):
     return {**original_data, **new_data}
+
+"""
