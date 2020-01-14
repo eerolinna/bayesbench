@@ -47,7 +47,7 @@ class PosteriorDatabase:
                 for posterior in posteriors:
                     print(posterior["posterior_name"])
 
-    def load_gold_standard(self, posterior_name: str) -> Output:
+    def load_gold_standard(self, posterior_name: str) -> Optional[Output]:
         gold_standards_dir = join(self.location, "gold_standards")
         paths = glob.glob(
             gold_standards_dir + f"/**/{posterior_name}.json", recursive=True
