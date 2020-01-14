@@ -1,4 +1,4 @@
-from . import run
+from . import compare_means
 from . import output
 from . import posterior_db
-from . import compare_means
+from . import run

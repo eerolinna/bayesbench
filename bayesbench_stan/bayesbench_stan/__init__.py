@@ -1,26 +1,26 @@
 # Provide methods that take Stan model and data and extra fitting arguments as input and run inference
 # Take diagnostics to run as input
 # return Output object, so essentially extract samples from chains or q or whatever. Return diagnostic values too.
-
 # Most of the metadata (execution time, method name, dataset name etc) could be filled by bayesbench, then it doesn't need to be repeated in the inference method packages
-
-
 # Bayesbench can handle turning command line arguments into a list of diagnostic functions to call, so this package doesn't need to worry about that
-
 # Advanced stuff: can we validate that the diagnostics actually work for the intermediate output that the inference method produces? We could sort of do this with some test cases probably
-
 import json
 from collections import defaultdict
-from typing import (Any, Callable, Dict, List, Mapping, Optional, Sequence,
-                    Tuple)
+from typing import Any
+from typing import Callable
+from typing import Dict
+from typing import List
+from typing import Mapping
+from typing import Optional
+from typing import Sequence
+from typing import Tuple
 
 import numpy as np
 import pandas as pd
 from pystan.diagnostics import check_hmc_diagnostics
 
-from bayesbench.output import Samples
-
 from . import stan_utility
+from bayesbench.output import Samples
 
 
 def nuts(

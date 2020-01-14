@@ -1,9 +1,10 @@
 import functools
-from typing import Any, Mapping
+from typing import Any
+from typing import Mapping
 
 import bayesbench
-
-from .constants import output_dir, posterior_db_location
+from .constants import output_dir
+from .constants import posterior_db_location
 from .posteriors import posteriors
 from .try_8schools import get_gold_standard_names
 

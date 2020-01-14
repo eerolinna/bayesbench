@@ -1,6 +1,12 @@
 import json
-from dataclasses import asdict, dataclass, fields
-from typing import Any, Mapping, Optional, Sequence, Tuple
+from dataclasses import asdict
+from dataclasses import dataclass
+from dataclasses import fields
+from typing import Any
+from typing import Mapping
+from typing import Optional
+from typing import Sequence
+from typing import Tuple
 from zipfile import ZipFile
 
 import numpy as np

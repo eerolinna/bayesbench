@@ -1,6 +1,7 @@
-import pystan
 import pickle
+
 import numpy
+import pystan
 
 
 def check_div(fit):

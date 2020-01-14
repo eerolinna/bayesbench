@@ -1,5 +1,6 @@
-import yaml
 import os
+
+import yaml
 
 posterior_names = """radon_hiearchical_intercept2_hoprior
 radon_mn_hiearchical_intercept2_hoprior

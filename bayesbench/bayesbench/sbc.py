@@ -1,7 +1,12 @@
-from typing import Dict, Any, Mapping, Sequence, Optional
+import json
+from typing import Any
+from typing import Dict
+from typing import Mapping
+from typing import Optional
+from typing import Sequence
+
 from .posterior_db import PosteriorDatabase
 from .run import run
-import json
 
 
 def sbc(
@@ -50,4 +55,3 @@ def sbc(
 
 def merge(original_data, new_data):
     return {**original_data, **new_data}
-

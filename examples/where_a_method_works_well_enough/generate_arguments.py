@@ -1,5 +1,6 @@
-import bayesbench
 import json
+
+import bayesbench
 
 knowledge_base = bayesbench.load_knowledge_base("kb_location")
 

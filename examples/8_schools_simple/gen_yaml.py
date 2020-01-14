@@ -1,5 +1,6 @@
-import yaml
 import os
+
+import yaml
 
 
 posterior_names = ["8_schools_noncentered"]

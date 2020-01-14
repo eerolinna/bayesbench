@@ -40,4 +40,4 @@ Seems pretty clear right now
 Loading diagnostic functions is a bit of an open question but inference engines don't need to be concerned with that
 Schema for diagnostic functions: probably functions of one argument (inference output), output is something that is json serializable
 
-SBC 
+SBC

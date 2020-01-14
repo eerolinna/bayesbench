@@ -11,4 +11,3 @@ setup(
     packages=["bayesbench_stan"],
     zip_safe=False,
 )
-

@@ -1,9 +1,14 @@
-from bayesbench.posterior_db import PosteriorDatabase
-from collections import defaultdict
-from typing import Sequence, Mapping, List, Any
-from bayesbench.output import Output
 import json
+from collections import defaultdict
+from typing import Any
+from typing import List
+from typing import Mapping
+from typing import Sequence
+
 import numpy as np
+
+from bayesbench.output import Output
+from bayesbench.posterior_db import PosteriorDatabase
 
 
 def compare_means(outputs: Sequence[Output], posterior_db_location=None):
