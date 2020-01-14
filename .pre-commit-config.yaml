@@ -14,6 +14,7 @@ repos:
     rev: v0.720
     hooks:
     -   id: mypy
+        files: ^bayesbench
 -   repo: https://github.com/asottile/reorder_python_imports
     rev: v1.6.1
     hooks:
