@@ -6,9 +6,9 @@ from typing import Mapping
 from typing import Sequence
 
 import numpy as np
+from posterior_db import PosteriorDatabase
 
-from bayesbench.output import Output
-from bayesbench.posterior_db import PosteriorDatabase
+from .output import Output
 
 
 def compare_means(outputs: Sequence[Output], posterior_db_location=None):

@@ -26,10 +26,11 @@ from typing import Optional
 from typing import Sequence
 
 import numpy
+from posterior_db import Posterior
+from posterior_db import PosteriorDatabase
 
 from .output import Output
 from .output import RunConfig
-from .posterior_db import PosteriorDatabase
 
 
 def run(
@@ -62,13 +63,11 @@ def run(
 
     posterior_db = PosteriorDatabase(posterior_db_location)
 
-    dataset_path = posterior_db.get_dataset_path(posterior_name=posterior_name)
-    model_name = posterior_db.get_model_name(posterior_name)
+    posterior = Posterior(posterior_name, posterior_db)
+    dataset = posterior.dataset()
+    model_name = posterior.posterior_info["model_name"]
 
     inference_engine_name, method_name = inference_engine.rsplit(".", 1)
-
-    with open(dataset_path) as json_f:
-        dataset = json.load(json_f)
 
     inference_engine_module = importlib.import_module(inference_engine_name)
 
@@ -80,7 +79,7 @@ def run(
         model_name=model_name,
         data=dataset,
         diagnostics=diagnostics,
-        get_model_path=posterior_db.get_model_path,
+        get_model_path=posterior.model_code_file_path,
         seed=seed,
         method_specific_arguments=method_specific_arguments,
     )
@@ -106,11 +105,18 @@ def apply_run(run_data):
     return run(**run_data)
 
 
-def run_many(runs):
-    import multiprocessing
+def run_many(runs, parallel=True):
+    if parallel:
+        import multiprocessing
 
-    pool = multiprocessing.Pool(7)
-    results = pool.map(apply_run, runs)
+        pool = multiprocessing.Pool(7)
+        results = pool.map(apply_run, runs)
+        return results
+
+    results = []
+    for run in runs:
+        results.append(apply_run(run))
+
     return results
 
 
@@ -170,6 +176,9 @@ def save_output(*, output: Output, output_dir: str) -> None:
     filename = f"{config_hash}.json"
 
     full_filename = os.path.join(output_dir, filename)
+
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
     with open(full_filename, "w") as f:
         json.dump(output.to_dict(), f, cls=NumpyEncoder)

@@ -5,6 +5,7 @@
 # Bayesbench can handle turning command line arguments into a list of diagnostic functions to call, so this package doesn't need to worry about that
 # Advanced stuff: can we validate that the diagnostics actually work for the intermediate output that the inference method produces? We could sort of do this with some test cases probably
 import json
+import os
 from collections import defaultdict
 from typing import Any
 from typing import Callable
@@ -12,7 +13,6 @@ from typing import Dict
 from typing import List
 from typing import Mapping
 from typing import Optional
-from typing import Sequence
 from typing import Tuple
 
 import numpy as np
@@ -33,7 +33,7 @@ def nuts(
     method_specific_arguments: Mapping[str, Any],
 ) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
 
-    stan_model = get_compiled_model(model_name, get_model_path)
+    stan_model = get_compiled_model(get_model_path)
 
     # load extra args for model X and method Y
     stan_fit = stan_model.sampling(data=data, **method_specific_arguments)
@@ -51,7 +51,7 @@ def nuts(
     return samples, diagnostic_values, explicit_args
 
 
-def fullrank_advi(
+def vb(
     *,
     model_name: str,
     data: Mapping[str, Any],
@@ -61,51 +61,9 @@ def fullrank_advi(
     method_specific_arguments: Mapping[str, Any],
 ) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
 
-    return base_advi(
-        model_name=model_name,
-        data=data,
-        diagnostics=diagnostics,
-        get_model_path=get_model_path,
-        seed=seed,
-        method_specific_arguments=method_specific_arguments,
-        algorithm="fullrank",
-    )
+    stan_model = get_compiled_model(get_model_path)
 
-
-def meanfield_advi(
-    *,
-    model_name: str,
-    data: Mapping[str, Any],
-    diagnostics: Any,
-    get_model_path: Callable,
-    seed: Optional[int],
-    method_specific_arguments: Mapping[str, Any],
-) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
-    return base_advi(
-        model_name=model_name,
-        data=data,
-        diagnostics=diagnostics,
-        get_model_path=get_model_path,
-        seed=seed,
-        method_specific_arguments=method_specific_arguments,
-        algorithm="meanfield",
-    )
-
-
-def base_advi(
-    *,
-    model_name: str,
-    data: Mapping[str, Any],
-    diagnostics: Any,
-    get_model_path: Callable,
-    seed: Optional[int],
-    method_specific_arguments: Mapping[str, Any],
-    algorithm: str,
-) -> Tuple[Samples, Mapping[str, Any], Mapping[str, Any]]:
-
-    stan_model = get_compiled_model(model_name, get_model_path)
-
-    result = stan_model.vb(data=data, algorithm=algorithm, **method_specific_arguments)
+    result = stan_model.vb(data=data, **method_specific_arguments)
 
     sample_file = result["args"]["sample_file"].decode("utf-8")
     df = pd.read_csv(sample_file, comment="#")
@@ -120,12 +78,6 @@ def base_advi(
     # Later we should remove arviz because that lets us avoid a dependency, but for now arviz is a good thing to save time
 
     # Hmm arviz might not work because it seems to expect MCMC result. Then I probably need to write the logic myself
-
-    model_info = get_model_info(model_name, get_model_path)
-
-    if model_info:
-        # Do stuff here
-        pass
 
     diagnostic_values: Mapping[str, Any] = {}  # TODO
 
@@ -165,34 +117,13 @@ def get_generative_model(model_name: str, get_model_path: Callable):
     return stan_model
 
 
-def get_compiled_model(model_name: str, get_model_path: Callable):
+def get_compiled_model(get_model_path: Callable):
 
     framework = "stan"
-    file_extension = ".stan"
-    model_code_path = get_model_path(
-        framework=framework, file_extension=file_extension, model_name=model_name
-    )
+    model_code_path = get_model_path(framework)
 
     stan_model = stan_utility.compile_model(model_code_path)
     return stan_model
-
-
-def get_model_info(
-    model_name: str, get_model_path: Callable
-) -> Optional[Mapping[str, Any]]:
-    framework = "stan"
-    file_extension = ".json"
-    info_path = get_model_path(
-        framework=framework,
-        file_extension=file_extension,
-        model_name=f"{model_name}-info",
-    )
-    if info_path is None:
-        return None
-    with open(info_path) as f:
-        info = json.load(f)
-
-    return info
 
 
 # There should be a function that can be used to create inference engine with custom inference methods
